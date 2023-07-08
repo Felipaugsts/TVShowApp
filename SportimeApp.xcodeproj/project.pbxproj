@@ -10,20 +10,36 @@
 		C53740802A59AD0100DE8426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537407F2A59AD0100DE8426 /* AppDelegate.swift */; };
 		C53740822A59AD0100DE8426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740812A59AD0100DE8426 /* SceneDelegate.swift */; };
 		C53740842A59AD0100DE8426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740832A59AD0100DE8426 /* ViewController.swift */; };
-		C53740872A59AD0100DE8426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53740852A59AD0100DE8426 /* Main.storyboard */; };
 		C53740892A59AD0300DE8426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53740882A59AD0300DE8426 /* Assets.xcassets */; };
-		C537408C2A59AD0300DE8426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C537408A2A59AD0300DE8426 /* LaunchScreen.storyboard */; };
+		C53740972A59AF6F00DE8426 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740962A59AF6F00DE8426 /* SplashInteractor.swift */; };
+		C53740992A59AF8400DE8426 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740982A59AF8400DE8426 /* SplashPresenter.swift */; };
+		C537409E2A59B1D100DE8426 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537409D2A59B1D100DE8426 /* WelcomeViewController.swift */; };
+		C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537409F2A59B21A00DE8426 /* SplashRouter.swift */; };
+		C59285302A59B53700A35072 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592852F2A59B53700A35072 /* SplashViewController.swift */; };
+		C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60A2A59BC4700D7DEA1 /* DSColor.swift */; };
+		C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */; };
+		C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */; };
+		F5EA0E8816B466D33C264936 /* Pods_SportimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.debug.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.release.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.release.xcconfig"; sourceTree = "<group>"; };
 		C537407C2A59AD0100DE8426 /* SportimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C537407F2A59AD0100DE8426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53740812A59AD0100DE8426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C53740832A59AD0100DE8426 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C53740862A59AD0100DE8426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C53740882A59AD0300DE8426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C537408B2A59AD0300DE8426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C537408D2A59AD0300DE8426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C53740962A59AF6F00DE8426 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		C53740982A59AF8400DE8426 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		C537409D2A59B1D100DE8426 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C537409F2A59B21A00DE8426 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		C592852F2A59B53700A35072 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		C598D60A2A59BC4700D7DEA1 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
+		C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EA0E8816B466D33C264936 /* Pods_SportimeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0112F97CA25DE0808E2A8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCC32C615D564C606595CD28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */,
+				62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C53740732A59AD0100DE8426 = {
 			isa = PBXGroup;
 			children = (
 				C537407E2A59AD0100DE8426 /* SportimeApp */,
 				C537407D2A59AD0100DE8426 /* Products */,
+				BCC32C615D564C606595CD28 /* Pods */,
+				0F0112F97CA25DE0808E2A8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,61 @@
 		C537407E2A59AD0100DE8426 /* SportimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C537409A2A59B19900DE8426 /* Modules */,
 				C537407F2A59AD0100DE8426 /* AppDelegate.swift */,
 				C53740812A59AD0100DE8426 /* SceneDelegate.swift */,
 				C53740832A59AD0100DE8426 /* ViewController.swift */,
-				C53740852A59AD0100DE8426 /* Main.storyboard */,
 				C53740882A59AD0300DE8426 /* Assets.xcassets */,
-				C537408A2A59AD0300DE8426 /* LaunchScreen.storyboard */,
 				C537408D2A59AD0300DE8426 /* Info.plist */,
 			);
 			path = SportimeApp;
+			sourceTree = "<group>";
+		};
+		C53740932A59AF3400DE8426 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C53740962A59AF6F00DE8426 /* SplashInteractor.swift */,
+				C592852F2A59B53700A35072 /* SplashViewController.swift */,
+				C53740982A59AF8400DE8426 /* SplashPresenter.swift */,
+				C537409F2A59B21A00DE8426 /* SplashRouter.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		C537409A2A59B19900DE8426 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C598D6092A59BC3500D7DEA1 /* DSKit */,
+				C537409B2A59B1B100DE8426 /* Authentication */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C537409B2A59B1B100DE8426 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C537409C2A59B1B900DE8426 /* Login */,
+				C53740932A59AF3400DE8426 /* SplashScreen */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C537409C2A59B1B900DE8426 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C537409D2A59B1D100DE8426 /* WelcomeViewController.swift */,
+				C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */,
+				C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C598D6092A59BC3500D7DEA1 /* DSKit */ = {
+			isa = PBXGroup;
+			children = (
+				C598D60A2A59BC4700D7DEA1 /* DSColor.swift */,
+			);
+			path = DSKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C53740902A59AD0300DE8426 /* Build configuration list for PBXNativeTarget "SportimeApp" */;
 			buildPhases = (
+				F46F38BCA4062A0D2A3E96FA /* [CP] Check Pods Manifest.lock */,
 				C53740782A59AD0100DE8426 /* Sources */,
 				C53740792A59AD0100DE8426 /* Frameworks */,
 				C537407A2A59AD0100DE8426 /* Resources */,
+				CB9FCB6575FBF512F207FB1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,45 +209,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C537408C2A59AD0300DE8426 /* LaunchScreen.storyboard in Resources */,
 				C53740892A59AD0300DE8426 /* Assets.xcassets in Resources */,
-				C53740872A59AD0100DE8426 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CB9FCB6575FBF512F207FB1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportimeApp/Pods-SportimeApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportimeApp/Pods-SportimeApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportimeApp/Pods-SportimeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F46F38BCA4062A0D2A3E96FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportimeApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C53740782A59AD0100DE8426 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C537409E2A59B1D100DE8426 /* WelcomeViewController.swift in Sources */,
+				C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */,
+				C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */,
 				C53740842A59AD0100DE8426 /* ViewController.swift in Sources */,
+				C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */,
 				C53740802A59AD0100DE8426 /* AppDelegate.swift in Sources */,
+				C53740972A59AF6F00DE8426 /* SplashInteractor.swift in Sources */,
 				C53740822A59AD0100DE8426 /* SceneDelegate.swift in Sources */,
+				C53740992A59AF8400DE8426 /* SplashPresenter.swift in Sources */,
+				C59285302A59B53700A35072 /* SplashViewController.swift in Sources */,
+				C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C53740852A59AD0100DE8426 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C53740862A59AD0100DE8426 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C537408A2A59AD0300DE8426 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C537408B2A59AD0300DE8426 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C537408E2A59AD0300DE8426 /* Debug */ = {
@@ -282,6 +395,7 @@
 		};
 		C53740912A59AD0300DE8426 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +406,8 @@
 				INFOPLIST_FILE = SportimeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,14 +415,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Felipeas.SportimeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C53740922A59AD0300DE8426 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +437,8 @@
 				INFOPLIST_FILE = SportimeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +446,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Felipeas.SportimeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
