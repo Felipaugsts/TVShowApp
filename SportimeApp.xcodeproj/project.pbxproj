@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C520F9292A5CB27500C2338A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520F9282A5CB27500C2338A /* LoginViewController.swift */; };
+		C520F92B2A5CB28800C2338A /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */; };
 		C53740802A59AD0100DE8426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537407F2A59AD0100DE8426 /* AppDelegate.swift */; };
 		C53740822A59AD0100DE8426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740812A59AD0100DE8426 /* SceneDelegate.swift */; };
-		C53740842A59AD0100DE8426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740832A59AD0100DE8426 /* ViewController.swift */; };
 		C53740892A59AD0300DE8426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53740882A59AD0300DE8426 /* Assets.xcassets */; };
 		C53740972A59AF6F00DE8426 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740962A59AF6F00DE8426 /* SplashInteractor.swift */; };
 		C53740992A59AF8400DE8426 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740982A59AF8400DE8426 /* SplashPresenter.swift */; };
@@ -19,16 +20,22 @@
 		C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60A2A59BC4700D7DEA1 /* DSColor.swift */; };
 		C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */; };
 		C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */; };
+		C5EF08C22A633D8800E141AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */; };
+		C5EF08C42A63455A00E141AA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08C32A63455A00E141AA /* AuthService.swift */; };
+		C5EF08C62A63467500E141AA /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08C52A63467500E141AA /* LoginInteractor.swift */; };
+		C5EF08C82A634CA700E141AA /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08C72A634CA700E141AA /* UserRepository.swift */; };
+		C5EF08D02A63544900E141AA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08CF2A63544900E141AA /* Button.swift */; };
 		F5EA0E8816B466D33C264936 /* Pods_SportimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.debug.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.release.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.release.xcconfig"; sourceTree = "<group>"; };
+		C520F9282A5CB27500C2338A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		C537407C2A59AD0100DE8426 /* SportimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C537407F2A59AD0100DE8426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53740812A59AD0100DE8426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C53740832A59AD0100DE8426 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C53740882A59AD0300DE8426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C537408D2A59AD0300DE8426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C53740962A59AF6F00DE8426 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
@@ -39,6 +46,11 @@
 		C598D60A2A59BC4700D7DEA1 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
 		C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C5EF08C32A63455A00E141AA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = "../New Group1/AuthService.swift"; sourceTree = "<group>"; };
+		C5EF08C52A63467500E141AA /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		C5EF08C72A634CA700E141AA /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		C5EF08CF2A63544900E141AA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +83,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C520F9272A5CB26900C2338A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C520F9282A5CB27500C2338A /* LoginViewController.swift */,
+				C5EF08C52A63467500E141AA /* LoginInteractor.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		C53740732A59AD0100DE8426 = {
 			isa = PBXGroup;
 			children = (
@@ -92,11 +113,14 @@
 		C537407E2A59AD0100DE8426 /* SportimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C5EF08CE2A63543C00E141AA /* Components */,
+				C5EF08CD2A6351CE00E141AA /* Services */,
+				C5EF08C92A634E7600E141AA /* DataSource */,
 				C537409A2A59B19900DE8426 /* Modules */,
 				C537407F2A59AD0100DE8426 /* AppDelegate.swift */,
 				C53740812A59AD0100DE8426 /* SceneDelegate.swift */,
-				C53740832A59AD0100DE8426 /* ViewController.swift */,
 				C53740882A59AD0300DE8426 /* Assets.xcassets */,
+				C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */,
 				C537408D2A59AD0300DE8426 /* Info.plist */,
 			);
 			path = SportimeApp;
@@ -125,20 +149,22 @@
 		C537409B2A59B1B100DE8426 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				C537409C2A59B1B900DE8426 /* Login */,
+				C520F9272A5CB26900C2338A /* Login */,
+				C537409C2A59B1B900DE8426 /* Welcome */,
 				C53740932A59AF3400DE8426 /* SplashScreen */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		C537409C2A59B1B900DE8426 /* Login */ = {
+		C537409C2A59B1B900DE8426 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
 				C537409D2A59B1D100DE8426 /* WelcomeViewController.swift */,
 				C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */,
 				C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */,
+				C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */,
 			);
-			path = Login;
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		C598D6092A59BC3500D7DEA1 /* DSKit */ = {
@@ -147,6 +173,30 @@
 				C598D60A2A59BC4700D7DEA1 /* DSColor.swift */,
 			);
 			path = DSKit;
+			sourceTree = "<group>";
+		};
+		C5EF08C92A634E7600E141AA /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				C5EF08C72A634CA700E141AA /* UserRepository.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		C5EF08CD2A6351CE00E141AA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C5EF08C32A63455A00E141AA /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C5EF08CE2A63543C00E141AA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C5EF08CF2A63544900E141AA /* Button.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53740892A59AD0300DE8426 /* Assets.xcassets in Resources */,
+				C5EF08C22A633D8800E141AA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,11 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C520F9292A5CB27500C2338A /* LoginViewController.swift in Sources */,
 				C537409E2A59B1D100DE8426 /* WelcomeViewController.swift in Sources */,
+				C5EF08C62A63467500E141AA /* LoginInteractor.swift in Sources */,
+				C5EF08D02A63544900E141AA /* Button.swift in Sources */,
 				C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */,
 				C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */,
-				C53740842A59AD0100DE8426 /* ViewController.swift in Sources */,
+				C520F92B2A5CB28800C2338A /* WelcomeRouter.swift in Sources */,
 				C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */,
+				C5EF08C42A63455A00E141AA /* AuthService.swift in Sources */,
+				C5EF08C82A634CA700E141AA /* UserRepository.swift in Sources */,
 				C53740802A59AD0100DE8426 /* AppDelegate.swift in Sources */,
 				C53740972A59AF6F00DE8426 /* SplashInteractor.swift in Sources */,
 				C53740822A59AD0100DE8426 /* SceneDelegate.swift in Sources */,
