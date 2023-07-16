@@ -1,0 +1,44 @@
+{
+  "name": "SDKCommon",
+  "version": "0.0.5",
+  "summary": "A short description of SDKCommon.",
+  "homepage": "https://github.com/Felipaugsts/Common",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Felipe Augusto Silva": ""
+  },
+  "source": {
+    "git": "git@github.com:Felipaugsts/Common.git",
+    "tag": "0.0.5"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "SDKCommon/Classes/**/*",
+  "dependencies": {
+    "SwinjectAutoregistration": [
+
+    ],
+    "Swinject": [
+
+    ],
+    "Firebase/Auth": [
+
+    ],
+    "Firebase/Firestore": [
+
+    ],
+    "Firebase/Core": [
+
+    ],
+    "FirebaseFirestoreSwift": [
+      "> 7.0-beta"
+    ],
+    "KeychainSwift": [
+      "20.0.0"
+    ]
+  }
+}

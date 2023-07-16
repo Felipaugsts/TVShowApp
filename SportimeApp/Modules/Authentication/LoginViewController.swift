@@ -7,7 +7,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+public protocol LoginViewControllerLogic {
+    func displayHomeScreen()
+}
+
+class LoginViewController: UIViewController, LoginViewControllerLogic {
 
     var textField: UITextField = {
         let textField = UITextField()
@@ -24,6 +28,7 @@ class LoginViewController: UIViewController {
         textField.textColor = .darkGray
         textField.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isSecureTextEntry = true
         return textField
     }()
 
@@ -69,7 +74,7 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 16
         button.setTitle("Esqueci minha senha", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.addTarget(self, action: #selector(displayLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(forgotPassword), for: .touchUpInside)
         return button
     }()
     
@@ -78,15 +83,28 @@ class LoginViewController: UIViewController {
     lazy var confirmBottom = signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
     
     var interactor: LoginInteractorLogic
+    var presenter: LoginPresenterLogic
+    var router: LoginRouterLogic
     
-    public init(interactor: LoginInteractorLogic = LoginInteractor()) {
+    public init(interactor: LoginInteractorLogic = LoginInteractor(),
+                presenter: LoginPresenterLogic = LoginPresenter(),
+                router: LoginRouterLogic = LoginRouter()) {
         self.interactor = interactor
+        self.presenter = presenter
+        self.router = router
+        
         
         super.init(nibName: nil, bundle: nil)
+        
+        setupArch()
     }
     
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        stopLoading()
     }
     
     override func viewDidLoad() {
@@ -99,14 +117,39 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    private func setupArch() {
+        interactor.presenter = presenter
+        presenter.controller = self
+        router.controller = self
+    }
+    
     @objc
     private func confirmButton() {
         guard let email = textField.text,
         let password = passwordField.text else { return }
-        
-        signInButton.startLoading()
+        startLoading()
         
         interactor.authenticate(email: email, password: password)
+    }
+    
+    private func startLoading() {
+        signInButton.startLoading()
+        view.inputViewController?.isEditing = false
+        view.isUserInteractionEnabled = false
+    }
+    
+    private func stopLoading() {
+        signInButton.stopLoading()
+        view.isUserInteractionEnabled = true
+    }
+    
+    @objc
+    private func forgotPassword() {
+        interactor.tapForgotPassword()
+    }
+    
+    public func displayHomeScreen() {
+        router.routeToHome()
     }
 }
 

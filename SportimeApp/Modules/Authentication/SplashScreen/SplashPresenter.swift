@@ -12,6 +12,8 @@ public protocol SplashPresenter: AnyObject {
     
     func presentScreenValues()
     func presentLogin()
+    func presentLoggedIn()
+    func presentHomeView()
 }
 
 public class SplashPresenterDefault: SplashPresenter {
@@ -25,5 +27,13 @@ public class SplashPresenterDefault: SplashPresenter {
     
     public func presentLogin() {
         controller?.navigateToLogin()
+    }
+    
+    public func presentLoggedIn() {
+        controller?.displayLoggedIn()
+    }
+    
+    public func presentHomeView() {
+        controller?.displayHomeView()
     }
 }

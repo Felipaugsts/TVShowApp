@@ -10,7 +10,9 @@ import Lottie
 
 public protocol SplashViewControllerProtocol {
     func displayScreenValue()
-    func navigateToLogin() 
+    func navigateToLogin()
+    func displayLoggedIn()
+    func displayHomeView()
 }
 
 public class SplashViewController: UIViewController, SplashViewControllerProtocol {
@@ -71,6 +73,14 @@ public class SplashViewController: UIViewController, SplashViewControllerProtoco
     
     public func navigateToLogin() {
         router.routeToLogin()
+    }
+    
+    public func displayLoggedIn() {
+        router.routeToLoggedIn()
+    }
+    
+    public func displayHomeView() {
+        router.routeHomeView()
     }
 }
 

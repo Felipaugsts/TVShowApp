@@ -12,6 +12,8 @@ public protocol SplashRouterLogic {
     var controller: UIViewController? { get set }
     
     func routeToLogin()
+    func routeToLoggedIn()
+    func routeHomeView()
 }
 public class SplashRouter: SplashRouterLogic {
     
@@ -21,6 +23,14 @@ public class SplashRouter: SplashRouterLogic {
     
     public func routeToLogin() {
         controller?.navigationController?.pushViewController(WelcomeViewController(), animated: false)
+    }
+    
+    public func routeToLoggedIn() {
+        controller?.navigationController?.pushViewController(LoggedInViewController(), animated: true)
+    }
+    
+    public func routeHomeView() {
+        controller?.navigationController?.pushViewController(HomeViewController(), animated: true)
     }
 }
 
