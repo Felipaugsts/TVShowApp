@@ -37,6 +37,11 @@ class Button: UIButton {
         ])
     }
     
+    func setButtonTitle(title: String) {
+        originalTitle = title
+        setTitle(title, for: .normal)
+    }
+    
     func startLoading() {
         setTitle(nil, for: .normal)
         isEnabled = false
