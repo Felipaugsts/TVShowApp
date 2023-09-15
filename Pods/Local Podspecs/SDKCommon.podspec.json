@@ -1,6 +1,6 @@
 {
   "name": "SDKCommon",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "summary": "A short description of SDKCommon.",
   "homepage": "https://github.com/Felipaugsts/Common",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "git@github.com:Felipaugsts/Common.git",
-    "tag": "0.0.5"
+    "tag": "0.0.6"
   },
   "platforms": {
     "ios": "10.0"

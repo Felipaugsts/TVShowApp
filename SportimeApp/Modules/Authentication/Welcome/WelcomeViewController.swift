@@ -7,13 +7,16 @@
 
 import UIKit
 
+// MARK: - Protocol
 public protocol WelcomeViewControllerLogic {
-    func displayScreenValues()
+    func displayScreenValues(_ values: WelcomeModel.ScreenValues)
     func displayLogin()
     func displayRegister()
 }
 
-public class WelcomeViewController: UIViewController, WelcomeViewControllerLogic {
+public class WelcomeViewController: UIViewController {
+    
+    // MARK: - Components
     
     lazy var background: UIImageView = {
        let image = UIImageView()
@@ -42,9 +45,13 @@ public class WelcomeViewController: UIViewController, WelcomeViewControllerLogic
         return button
     }()
 
+    // MARK: - Variables
+    
     var interactor: WelcomeInteractorLogic
     var presenter: WelcomePresenterLogic
     var router: WelcomeRouterLogic
+    
+    // MARK: - Initializer
     
     public init(interactor: WelcomeInteractorLogic = WelcomeInteractor(),
                 presenter: WelcomePresenterLogic = WelcomePresenter(),
@@ -60,7 +67,7 @@ public class WelcomeViewController: UIViewController, WelcomeViewControllerLogic
     }
     
     public required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +80,9 @@ public class WelcomeViewController: UIViewController, WelcomeViewControllerLogic
         setupLayout()
     }
     
-    func setupLayout() {
+    // MARK: - Private Methods
+    
+    private func setupLayout() {
         view.backgroundColor = .white
         
         view.addSubview(registerButton)
@@ -103,11 +112,16 @@ public class WelcomeViewController: UIViewController, WelcomeViewControllerLogic
         presenter.controller = self
         router.controller = self
     }
-    
-    public func displayScreenValues() {
-        signInButton.setTitle("Acessar minha conta", for: .normal)
-        registerButton.setTitle("Registrar", for: .normal)
+}
+
+// MARK: - Extension
+
+extension WelcomeViewController: WelcomeViewControllerLogic {
+    public func displayScreenValues(_ values: WelcomeModel.ScreenValues) {
+        signInButton.setTitle(values.login, for: .normal)
+        registerButton.setTitle(values.register, for: .normal)
     }
+    
     
     @objc
     public func displayLogin() {
@@ -115,4 +129,5 @@ public class WelcomeViewController: UIViewController, WelcomeViewControllerLogic
     }
     
     public func displayRegister() { }
+    
 }

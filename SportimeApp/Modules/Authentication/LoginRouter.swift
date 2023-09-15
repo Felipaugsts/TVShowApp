@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// MARK: - Protocol
+
 public protocol LoginRouterLogic {
     var controller: UIViewController? { get set }
     
@@ -15,8 +17,9 @@ public protocol LoginRouterLogic {
 }
 
 public  class LoginRouter: LoginRouterLogic {
-    
     public var controller: UIViewController?
+    
+    // MARK: - Public Methods
     
     public func routeToHome() {
         controller?.navigationController?.pushViewController(HomeViewController(), animated: false)

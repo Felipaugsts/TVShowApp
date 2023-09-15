@@ -20,6 +20,10 @@
 		C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60A2A59BC4700D7DEA1 /* DSColor.swift */; };
 		C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */; };
 		C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */; };
+		C5BB40DF2AB3C9C500051633 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BB40DE2AB3C9C500051633 /* LoginModel.swift */; };
+		C5BB40EC2AB3CBC400051633 /* LoginKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BB40EB2AB3CBC400051633 /* LoginKeys.swift */; };
+		C5BB40EE2AB3CCAA00051633 /* LoginKeysValues.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5BB40ED2AB3CCAA00051633 /* LoginKeysValues.strings */; };
+		C5BB40F02AB3D2EB00051633 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BB40EF2AB3D2EB00051633 /* WelcomeModel.swift */; };
 		C5EF08C22A633D8800E141AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */; };
 		C5EF08C62A63467500E141AA /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08C52A63467500E141AA /* LoginInteractor.swift */; };
 		C5EF08D02A63544900E141AA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08CF2A63544900E141AA /* Button.swift */; };
@@ -48,6 +52,10 @@
 		C598D60A2A59BC4700D7DEA1 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
 		C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		C5BB40DE2AB3C9C500051633 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		C5BB40EB2AB3CBC400051633 /* LoginKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeys.swift; sourceTree = "<group>"; };
+		C5BB40ED2AB3CCAA00051633 /* LoginKeysValues.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = LoginKeysValues.strings; sourceTree = "<group>"; };
+		C5BB40EF2AB3D2EB00051633 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
 		C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C5EF08C52A63467500E141AA /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		C5EF08CF2A63544900E141AA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 				C5EF08C52A63467500E141AA /* LoginInteractor.swift */,
 				C5EF08D82A6373B500E141AA /* LoginPresenter.swift */,
 				C5EF08DA2A63749C00E141AA /* LoginRouter.swift */,
+				C5BB40DE2AB3C9C500051633 /* LoginModel.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -119,13 +128,11 @@
 		C537407E2A59AD0100DE8426 /* SportimeApp */ = {
 			isa = PBXGroup;
 			children = (
-				C5EF08CE2A63543C00E141AA /* Components */,
-				C537409A2A59B19900DE8426 /* Modules */,
-				C537407F2A59AD0100DE8426 /* AppDelegate.swift */,
-				C53740812A59AD0100DE8426 /* SceneDelegate.swift */,
-				C53740882A59AD0300DE8426 /* Assets.xcassets */,
 				C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */,
 				C537408D2A59AD0300DE8426 /* Info.plist */,
+				C537409A2A59B19900DE8426 /* Modules */,
+				C5BB40F22AB3D41000051633 /* Infrastructure */,
+				C5BB40F42AB3D62400051633 /* Assets */,
 			);
 			path = SportimeApp;
 			sourceTree = "<group>";
@@ -144,7 +151,8 @@
 		C537409A2A59B19900DE8426 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C5EF08D72A6370B000E141AA /* HomeScreen */,
+				C5EF08CE2A63543C00E141AA /* Components */,
+				C5EF08D72A6370B000E141AA /* Home */,
 				C537409B2A59B1B100DE8426 /* Authentication */,
 			);
 			path = Modules;
@@ -153,10 +161,10 @@
 		C537409B2A59B1B100DE8426 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				C5BB40E02AB3CA1400051633 /* Resources */,
 				C5EF08D12A636D5400E141AA /* LoggedIn */,
 				C520F9272A5CB26900C2338A /* Login */,
 				C537409C2A59B1B900DE8426 /* Welcome */,
-				C53740932A59AF3400DE8426 /* SplashScreen */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -168,8 +176,44 @@
 				C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */,
 				C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */,
 				C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */,
+				C5BB40EF2AB3D2EB00051633 /* WelcomeModel.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		C5BB40E02AB3CA1400051633 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5BB40EB2AB3CBC400051633 /* LoginKeys.swift */,
+				C5BB40ED2AB3CCAA00051633 /* LoginKeysValues.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C5BB40F22AB3D41000051633 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				C53740932A59AF3400DE8426 /* SplashScreen */,
+				C5BB40F32AB3D49400051633 /* AppLifecycle */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C5BB40F32AB3D49400051633 /* AppLifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				C537407F2A59AD0100DE8426 /* AppDelegate.swift */,
+				C53740812A59AD0100DE8426 /* SceneDelegate.swift */,
+			);
+			path = AppLifecycle;
+			sourceTree = "<group>";
+		};
+		C5BB40F42AB3D62400051633 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C53740882A59AD0300DE8426 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		C5EF08CE2A63543C00E141AA /* Components */ = {
@@ -189,12 +233,12 @@
 			path = LoggedIn;
 			sourceTree = "<group>";
 		};
-		C5EF08D72A6370B000E141AA /* HomeScreen */ = {
+		C5EF08D72A6370B000E141AA /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C5EF08DC2A63752000E141AA /* HomeViewController.swift */,
 			);
-			path = HomeScreen;
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5BB40EE2AB3CCAA00051633 /* LoginKeysValues.strings in Resources */,
 				C53740892A59AD0300DE8426 /* Assets.xcassets in Resources */,
 				C5EF08C22A633D8800E141AA /* GoogleService-Info.plist in Resources */,
 			);
@@ -314,8 +359,10 @@
 				C520F9292A5CB27500C2338A /* LoginViewController.swift in Sources */,
 				C537409E2A59B1D100DE8426 /* WelcomeViewController.swift in Sources */,
 				C5EF08C62A63467500E141AA /* LoginInteractor.swift in Sources */,
+				C5BB40EC2AB3CBC400051633 /* LoginKeys.swift in Sources */,
 				C5EF08D92A6373B500E141AA /* LoginPresenter.swift in Sources */,
 				C5EF08DD2A63752000E141AA /* HomeViewController.swift in Sources */,
+				C5BB40DF2AB3C9C500051633 /* LoginModel.swift in Sources */,
 				C5EF08D02A63544900E141AA /* Button.swift in Sources */,
 				C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */,
 				C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */,
@@ -327,6 +374,7 @@
 				C53740822A59AD0100DE8426 /* SceneDelegate.swift in Sources */,
 				C53740992A59AF8400DE8426 /* SplashPresenter.swift in Sources */,
 				C59285302A59B53700A35072 /* SplashViewController.swift in Sources */,
+				C5BB40F02AB3D2EB00051633 /* WelcomeModel.swift in Sources */,
 				C5EF08DB2A63749C00E141AA /* LoginRouter.swift in Sources */,
 				C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */,
 			);
@@ -385,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

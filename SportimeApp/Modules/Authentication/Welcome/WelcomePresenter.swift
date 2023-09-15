@@ -21,7 +21,8 @@ public class WelcomePresenter: WelcomePresenterLogic {
     public init () { }
     
     public func presentScreenValues() {
-        controller?.displayScreenValues()
+        controller?.displayScreenValues(WelcomeModel.ScreenValues(login: LoginKeys.Localized.welcomeLogin.string(),
+                                                                  register: LoginKeys.Localized.welcomeRegister.string()))
     }
     
     public func presentLogin() {

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+public enum WelcomeModel {
+    public struct ScreenValues {
+        public var login: String
+        public var register: String
+    }
+}

@@ -5,4 +5,15 @@
 //  Created by Felipe Augusto Silva on 14/09/23.
 //
 
-import Foundation
+// Welcome
+
+"welcomeLogin" = "Acessar minha conta";
+"welcomeRegister" = "Registrar";
+
+// Login
+"loginTitle" = "Welcome \nBack";
+"username" = "Email";
+"password" = "Senha";
+"confirmButton" = "Entrar";
+"forgotPassword" = "Esqueci minha senha";
+

@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+public enum LoginModel {
+    
+    // MARK: - Screen Values
+    
+    public struct ScreenValues {
+        public var title: String
+        public var textFieldText: String
+        public var passwordText: String
+        public var confirmButton: String
+        public var forgotPassword: String
+    }
+}

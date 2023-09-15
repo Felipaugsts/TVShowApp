@@ -8,18 +8,25 @@
 import Foundation
 import SDKCommon
 
+// MARK: - Protocol
+
 public protocol LoginInteractorLogic {
     var presenter: LoginPresenterLogic? { get set }
     
     func authenticate(email: String, password: String)
     func tapForgotPassword()
+    func loadValues()
 }
 
 public class LoginInteractor: LoginInteractorLogic {
     
-    var service: AuthServiceLogic
-    var biometryService: BiometryWorkerLogic
+    // MARK: -  Variables
+    private var service: AuthServiceLogic
+    private var biometryService: BiometryWorkerLogic
+    
     public var presenter: LoginPresenterLogic?
+    
+    // MARK: -  Initializers
     
     public init(service: AuthServiceLogic = AuthService(),
                 biometryService: BiometryWorkerLogic = BiometryWorker()) {
@@ -27,19 +34,32 @@ public class LoginInteractor: LoginInteractorLogic {
         self.biometryService = biometryService
     }
     
+    // MARK: -  Public Methods
+    
     public func authenticate(email: String, password: String) {
-        service.authenticate(with: email, password: password) { _, error in
+        service.authenticate(with: email, password: password) {[weak self] _, error in
+            
             if let error = error {
-                print("Authentication failed with error: \(error)")
+                switch error {
+                case .customError(statusCode: 403, result: nil):
+                    self?.presenter?.presentWrongPassword()
+                    
+                default:
+                    break
+                }
             } else {
-                self.biometryService.setBiometryEnabled(true)
-                self.biometryService.setBiometryData(email, password)
-                self.presenter?.presentHomeScreen()
+                self?.biometryService.setBiometryEnabled(true)
+                self?.biometryService.setBiometryData(email, password)
+                self?.presenter?.presentHomeScreen()
             }
         }
     }
     
+    public func loadValues() {
+        presenter?.presentScreenValues()
+    }
+    
     public func tapForgotPassword() {
-     
+        
     }
 }

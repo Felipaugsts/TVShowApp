@@ -6,18 +6,24 @@
 //
 
 import UIKit
+import SDKCommon
+
+// MARK: - Protocol
 
 public protocol LoginViewControllerLogic {
     func displayHomeScreen()
+    func displayWrongPassword()
+    func displayScreenValues(_ values: LoginModel.ScreenValues)
 }
 
 class LoginViewController: UIViewController, LoginViewControllerLogic {
 
+    // MARK: - Components
+    
     var textField: UITextField = {
         let textField = UITextField()
         textField.tintColor = .darkGray
         textField.textColor = .darkGray
-        textField.attributedPlaceholder = NSAttributedString(string: "CPF", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -26,7 +32,6 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         let textField = UITextField()
         textField.tintColor = .darkGray
         textField.textColor = .darkGray
-        textField.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
         return textField
@@ -41,7 +46,6 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     
     var label: UILabel = {
         let label = UILabel()
-        label.text = "Welcome \nBack"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
         label.numberOfLines = 0
@@ -58,33 +62,35 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
 
     lazy var signInButton: Button = {
        let button = Button()
-        button.tintColor = .blue
+        button.tintColor = DSColor.lightest
         button.backgroundColor = DSColor.primaryDark
         button.layer.cornerRadius = 16
-        button.setTitle("Entrar", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(confirmButton), for: .touchUpInside)
         return button
     }()
     
-    lazy var forgotPasswordButton: UIButton = {
-       let button = UIButton()
-        button.tintColor = .blue
+    lazy var forgotPasswordButton: Button = {
+       let button = Button()
+        button.tintColor = DSColor.lightest
         button.backgroundColor = DSColor.primaryDark
         button.layer.cornerRadius = 16
-        button.setTitle("Esqueci minha senha", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(forgotPassword), for: .touchUpInside)
         return button
     }()
     
-    lazy var confirmTrailing = signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
-    lazy var confirmLeading = signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40)
-    lazy var confirmBottom = signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+    // MARK: - Private Variables
     
-    var interactor: LoginInteractorLogic
-    var presenter: LoginPresenterLogic
-    var router: LoginRouterLogic
+    private var interactor: LoginInteractorLogic
+    private var presenter: LoginPresenterLogic
+    private var router: LoginRouterLogic
+    
+    private lazy var confirmTrailing = signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+    private lazy var confirmLeading = signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40)
+    private lazy var confirmBottom = signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+    
+    // MARK: - View Lifecycle
     
     public init(interactor: LoginInteractorLogic = LoginInteractor(),
                 presenter: LoginPresenterLogic = LoginPresenter(),
@@ -97,10 +103,11 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         super.init(nibName: nil, bundle: nil)
         
         setupArch()
+        signInButton.setTitle("Entrar", for: .normal)
     }
     
     public required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,13 +116,18 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        // Do any additional setup after loading the view.
+
+        interactor.loadValues()
         setupLayout()
         dismissKeyboardOnTap()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+        listenKeyboardChange()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeKeyboardListener()
+    }
+    
+    // MARK: - Private Methods
     
     private func setupArch() {
         interactor.presenter = presenter
@@ -126,9 +138,10 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     @objc
     private func confirmButton() {
         guard let email = textField.text,
-        let password = passwordField.text else { return }
+              let password = passwordField.text,
+              !email.isEmpty,
+              !password.isEmpty else { return }
         startLoading()
-        
         interactor.authenticate(email: email, password: password)
     }
     
@@ -151,9 +164,39 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     public func displayHomeScreen() {
         router.routeToHome()
     }
+    
+    public func displayWrongPassword() {
+        stopLoading()
+        passwordUnderline.backgroundColor = DSColor.negative
+    }
+    
+    func displayScreenValues(_ values: LoginModel.ScreenValues) {
+        label.text = values.title
+        
+        // TextField
+        textField.attributedPlaceholder = NSAttributedString(string: values.textFieldText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        passwordField.attributedPlaceholder = NSAttributedString(string: values.passwordText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        
+        // Buttons
+        signInButton.setButtonTitle(title: values.confirmButton)
+        forgotPasswordButton.setButtonTitle(title: values.forgotPassword)
+        
+    }
 }
 
+// MARK: - Extension
+
 extension LoginViewController {
+    
+    private func listenKeyboardChange() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func removeKeyboardListener() {
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillHideNotification)
+    }
     
     @objc
      private func keyboardWillAppear(_ notification: NSNotification) {
@@ -165,7 +208,11 @@ extension LoginViewController {
          moveViewWithKeyboard(notification: notification, keyboardWillShow: false)
      }
     
+    // MARK: - Layout
+    
     func setupLayout() {
+        view.backgroundColor = DSColor.lightest
+        
         view.addSubview(label)
         view.addSubview(textField)
         view.addSubview(textfieldUnderline)
@@ -177,10 +224,12 @@ extension LoginViewController {
         view.addSubview(forgotPasswordButton)
         
         NSLayoutConstraint.activate( [
+            // Text
             label.topAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: 170),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
+            // Username
             textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 130),
             textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
@@ -190,6 +239,7 @@ extension LoginViewController {
             textfieldUnderline.heightAnchor.constraint(equalToConstant: 1),
             textfieldUnderline.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
+            // Password
             passwordField.topAnchor.constraint(equalTo: textfieldUnderline.bottomAnchor, constant: 50),
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             passwordField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
@@ -199,17 +249,21 @@ extension LoginViewController {
             passwordUnderline.heightAnchor.constraint(equalToConstant: 1),
             passwordUnderline.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
+            // Login Button
             signInButton.topAnchor.constraint(equalTo: passwordUnderline.bottomAnchor, constant: 50),
             signInButton.heightAnchor.constraint(equalToConstant: 55),
             confirmTrailing,
             confirmLeading,
             
+            // Forgot Password
             forgotPasswordButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 30),
             forgotPasswordButton.heightAnchor.constraint(equalToConstant: 55),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             forgotPasswordButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
         ])
     }
+    
+    // MARK: - Keyboard Change
     
     @objc
     private func moveViewWithKeyboard(notification: NSNotification, keyboardWillShow: Bool) {
@@ -226,7 +280,8 @@ extension LoginViewController {
         let keyboardCurve = UIView.AnimationCurve(rawValue: rawValue)
         
         // Change the constraints
-
+        forgotPasswordButton.isHidden = keyboardWillShow
+        
         if keyboardWillShow {
             confirmBottom.constant = -keyboardHeight
             confirmBottom.isActive = true
@@ -253,23 +308,4 @@ extension LoginViewController {
          }
          animator.startAnimation()
      }
-}
-
-extension UIViewController {
-    func dismissKeyboardOnTap() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc
-    private func dismissKeyboard(sender: UITapGestureRecognizer) {
-        let tapLocation = sender.location(in: view)
-        
-        // Check if the tap location is inside any of the text fields or buttons
-        let tappedView = view.hitTest(tapLocation, with: nil)
-        if !(tappedView is UITextField) && !(tappedView is UIButton) {
-            view.endEditing(true)
-        }
-    }
 }
