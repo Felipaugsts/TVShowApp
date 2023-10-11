@@ -17,6 +17,10 @@ public protocol SplashViewControllerProtocol {
 
 public class SplashViewController: UIViewController, SplashViewControllerProtocol {
 
+    public override var prefersStatusBarHidden: Bool {
+         return true
+     }
+    
     lazy var animationView: LottieAnimationView = {
        var view = LottieAnimationView()
         view = .init(name: "splash")

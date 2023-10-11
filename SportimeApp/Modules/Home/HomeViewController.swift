@@ -10,39 +10,26 @@ import SDKCommon
 
 class HomeViewController: UIViewController {
 
-    lazy var confirmButton: Button = {
-       let button = Button()
-        button.tintColor = .blue
-        button.backgroundColor = DSColor.primaryDark
-        button.layer.cornerRadius = 16
-        button.setTitle("Entrar", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(confirmButtonAction), for: .touchUpInside)
-        return button
-    }()
-
+    let budgetView = BudgetHomeView()
+    
+    override var prefersStatusBarHidden: Bool {
+         return true
+     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .blue
+        setNeedsStatusBarAppearanceUpdate()
+        
+        view.backgroundColor = .white
         navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        
-        view.addSubview(confirmButton)
-        
-        NSLayoutConstraint.activate([
-            confirmButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            confirmButton.heightAnchor.constraint(equalToConstant: 55),
-            confirmButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            confirmButton.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+        addbudgetViewToHome()
     }
-    
-    @objc
-    func confirmButtonAction() {
-     let service = AuthService()
+}
+
+extension HomeViewController: BudgetHomeViewDelegate {
+    func tapAddExpense() {
+        let service = AuthService()
         service.logout { _, error in
             if error != nil {
                 return
@@ -53,5 +40,18 @@ class HomeViewController: UIViewController {
             destination.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
             self.navigationController?.pushViewController(destination, animated: true)
         }
+    }
+    
+    func addbudgetViewToHome() {
+        budgetView.delegate = self
+        
+        view.addSubview(budgetView)
+        
+        NSLayoutConstraint.activate([
+            budgetView.topAnchor.constraint(equalTo: view.topAnchor),
+            budgetView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            budgetView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            budgetView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+        ])
     }
 }

@@ -12,6 +12,7 @@ public protocol WelcomeRouterLogic {
     var controller: UIViewController? { get set }
     
     func routeToLogin()
+    func createAccount()
 }
 
 public class WelcomeRouter: WelcomeRouterLogic {
@@ -22,5 +23,10 @@ public class WelcomeRouter: WelcomeRouterLogic {
     public func routeToLogin() {
         let view = LoginViewController()
         controller?.navigationController?.pushViewController(view, animated: true)
+    }
+    
+    public func createAccount() {
+        let destination = FullNameViewController()
+        controller?.navigationController?.pushViewController(destination, animated: true)
     }
 }

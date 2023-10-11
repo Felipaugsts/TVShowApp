@@ -28,6 +28,13 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         return textField
     }()
     
+    var textfieldUnderline: UIView = {
+        let underline = UIView()
+        underline.translatesAutoresizingMaskIntoConstraints = false
+        underline.backgroundColor = .darkGray
+        return underline
+    }()
+    
     var passwordField: UITextField = {
         let textField = UITextField()
         textField.tintColor = .darkGray
@@ -51,13 +58,6 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         return label
-    }()
-    
-    var textfieldUnderline: UIView = {
-        let underline = UIView()
-        underline.translatesAutoresizingMaskIntoConstraints = false
-        underline.backgroundColor = .darkGray
-        return underline
     }()
 
     lazy var signInButton: Button = {
@@ -103,7 +103,6 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         super.init(nibName: nil, bundle: nil)
         
         setupArch()
-        signInButton.setTitle("Entrar", for: .normal)
     }
     
     public required init?(coder: NSCoder) {
@@ -174,6 +173,7 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         label.text = values.title
         
         // TextField
+        signInButton.setTitle("Entrar", for: .normal)
         textField.attributedPlaceholder = NSAttributedString(string: values.textFieldText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         passwordField.attributedPlaceholder = NSAttributedString(string: values.passwordText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
         

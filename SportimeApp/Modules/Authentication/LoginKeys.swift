@@ -22,6 +22,5 @@ public enum LoginKeys {
         
         public var tableName: String { "LoginKeysValues" }
         public var bundle: Bundle? { Bundle(for: LoginInteractor.self) }
-        
     }
 }

@@ -29,7 +29,7 @@ public class WelcomeViewController: UIViewController {
     lazy var signInButton: UIButton = {
        let button = UIButton()
         button.tintColor = .blue
-        button.backgroundColor = DSColor.primaryDark
+        button.backgroundColor = DSColor.primary
         button.layer.cornerRadius = 16
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(displayLogin), for: .touchUpInside)
@@ -39,12 +39,14 @@ public class WelcomeViewController: UIViewController {
     lazy var registerButton: UIButton = {
        let button = UIButton()
         button.tintColor = .blue
-        button.backgroundColor = DSColor.primary
+        button.backgroundColor = DSColor.medium
         button.layer.cornerRadius = 16
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(displayRegister), for: .touchUpInside)
         return button
     }()
 
+    
     // MARK: - Variables
     
     var interactor: WelcomeInteractorLogic
@@ -128,6 +130,9 @@ extension WelcomeViewController: WelcomeViewControllerLogic {
         router.routeToLogin()
     }
     
-    public func displayRegister() { }
+    @objc
+    public func displayRegister() {
+        router.createAccount()
+    }
     
 }

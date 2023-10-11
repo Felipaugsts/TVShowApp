@@ -33,7 +33,7 @@ public class SplashInteractorDefault: SplashInteractor {
     }
     
     private func isUserSignedIn() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if self.userRepository.user != nil && self.service.isUserAuthenticated() {
                 self.presenter?.presentHomeView()
                 return

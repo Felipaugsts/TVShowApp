@@ -11,7 +11,7 @@ import UIKit
 public struct DSColor {
     
     //MARK: -Brand Colors
-    public static let primary = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+    public static let primary = #colorLiteral(red: 0, green: 0.714658916, blue: 1, alpha: 1)
     public static let primaryDark = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
     public static let secondary = #colorLiteral(red: 0.2274509804, green: 0.2509803922, blue: 0.2901960784, alpha: 1)
     public static let secondaryDark = #colorLiteral(red: 0.2004994154, green: 0.2237328887, blue: 0.2570925355, alpha: 1)
