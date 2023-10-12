@@ -11,6 +11,8 @@ import UIKit
 
 protocol CreatePasswordViewControllerProtocol: AnyObject {
     func displayScreenValues(_ values: CreatePasswordModel.ScreenValues)
+    func displayAccountCreated()
+    func displayInvalidPassword()
 }
 
 // MARK: - CreatePasswordViewController
@@ -40,7 +42,7 @@ class CreatePasswordViewController: OnboardingLayoutController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.isSecureTextEntry = true
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .default
         interactor.loadScreenValues()
         addActions()
     }
@@ -54,8 +56,18 @@ class CreatePasswordViewController: OnboardingLayoutController {
     
     private func addActions() {
         confirmButton.addAction {
+            self.navigationController?.navigationBar.isUserInteractionEnabled = false
             self.startLoading()
             self.interactor.validate(password: self.textField.text)
+        }
+        
+        textField.addTarget(self, action: #selector(disableError), for: .editingChanged)
+    }
+    
+    @objc
+    func disableError() {
+        if !errorLabel.isHidden {
+           hideError()
         }
     }
 }
@@ -66,12 +78,22 @@ extension CreatePasswordViewController: CreatePasswordViewControllerProtocol {
     
     func displayScreenValues(_ values: CreatePasswordModel.ScreenValues) {
         stopLoading()
-        
+        displayKeyboard(time: 0.7)
         DispatchQueue.main.async {
+            self.navigationController?.navigationBar.isUserInteractionEnabled = true
             self.labelTitle.text = values.title
             self.textField.placeholder = values.placeholder
-            self.confirmButton.setTitle(values.button, for: .normal)
+            self.confirmButton.setButtonTitle(title: values.button)
             self.textField.text = ""
         }
+    }
+    
+    func displayAccountCreated() {
+        router.routeToAccountCreated()
+    }
+    
+    func displayInvalidPassword() {
+        textField.text = ""
+        setError(text: "Senha inválida.")
     }
 }

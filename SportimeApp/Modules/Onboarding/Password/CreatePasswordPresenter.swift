@@ -30,20 +30,27 @@ class CreatePasswordPresenter: CreatePasswordPresenterProtocol {
     // MARK: - Public Methods
     
     func presentScreenValues() {
-        let values = CreatePasswordModel.ScreenValues(title: "Crie uma nova\nsenha", placeholder: "Senha", button: "Confirmar")
+        let values = CreatePasswordModel.ScreenValues(title: "Crie uma\nsenha",
+                                                      placeholder: "Senha",
+                                                      button: "Confirmar")
         controller?.displayScreenValues(values)
     }
     
     func presentInvalidPassword() {
-        
+        let values = CreatePasswordModel.ScreenValues(title: "Crie uma\nsenha",
+                                                      placeholder: "Senha",
+                                                      button: "Confirmar")
+        controller?.displayScreenValues(values)
+        controller?.displayInvalidPassword()
     }
     
     func presentConfirmPassword() {
-        let values = CreatePasswordModel.ScreenValues(title: "Confirme sua nova\nsenha", placeholder: "Confirmar senha", button: "Confirmar")
+        let values = CreatePasswordModel.ScreenValues(title: "Confirme sua nova\nsenha",
+                                                      placeholder: "Confirmar senha", button: "Confirmar")
         controller?.displayScreenValues(values)
     }
     
     func presentAccountCreated() {
-        
+        controller?.displayAccountCreated()
     }
 }

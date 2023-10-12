@@ -39,10 +39,22 @@ class EmailInteractor: EmailInteractorProtocol, EmailDataStore {
     }
     
     func validate(_ email: String?) {
-        guard let email = email else {
+        guard let email = email,
+        isValidEmail(email) else {
+            presenter?.presentInvalidEmail()
             return
         }
         self.email = email
         presenter?.presentCreatePassword()
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#
+        
+        if let range = email.range(of: emailRegex, options: .regularExpression) {
+            return range.lowerBound == email.startIndex && range.upperBound == email.endIndex
+        }
+        
+        return false
     }
 }

@@ -22,7 +22,7 @@ public class SplashRouter: SplashRouterLogic {
     public init() {}
     
     public func routeToLogin() {
-        controller?.navigationController?.pushViewController(WelcomeViewController(), animated: false)
+        UIApplication.setRootViewControllerWithNavigation(WelcomeViewController())
     }
     
     public func routeToLoggedIn() {

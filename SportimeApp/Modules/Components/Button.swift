@@ -25,6 +25,7 @@ class Button: UIButton {
     private func commonInit() {
         originalTitle = title(for: .normal)
         
+        titleLabel?.font = .circularBook(size: 16)
         loadingIndicator = UIActivityIndicatorView(style: .medium)
         loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
         loadingIndicator.color = .white
@@ -37,7 +38,7 @@ class Button: UIButton {
         ])
     }
     
-    func setButtonTitle(title: String) {
+    func setButtonTitle(title: String?) {
         originalTitle = title
         setTitle(title, for: .normal)
     }

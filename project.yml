@@ -1,0 +1,13 @@
+name: SportimeApp
+options:
+  minimumXcodeGenVersion: 2.17.0
+  deploymentTarget:
+  iOS: "13.0"
+targets:
+  SportimeApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+sources: [SportimeApp]
+dependencies:
+- package: Networking

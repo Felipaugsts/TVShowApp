@@ -12,6 +12,7 @@ import UIKit
 protocol EmailViewControllerProtocol: AnyObject {
     func displayScreenValues(_ values: EmailModel.ScreenValues)
     func displayCreatePassword()
+    func displayInvalidEmail()
 }
 
 // MARK: - EmailViewController
@@ -32,7 +33,7 @@ class EmailViewController: OnboardingLayoutController {
         super.init(nibName: nil, bundle: nil)
         setup()
     }
-    
+
     required init?(coder: NSCoder) {
         return nil
     }
@@ -41,6 +42,7 @@ class EmailViewController: OnboardingLayoutController {
         super.viewDidLoad()
         interactor.loadScreenValues()
         addActions()
+        textField.keyboardType = .emailAddress
     }
     
     private func setup() {
@@ -55,6 +57,14 @@ class EmailViewController: OnboardingLayoutController {
             self.startLoading()
             self.interactor.validate(self.textField.text)
         }
+        
+        textField.addTarget(self, action: #selector(disableError), for: .editingChanged)
+    }
+    
+    @objc func disableError() {
+        if !errorLabel.isHidden {
+           hideError()
+        }
     }
 }
 
@@ -65,10 +75,15 @@ extension EmailViewController: EmailViewControllerProtocol {
     func displayScreenValues(_ values: EmailModel.ScreenValues) {
         labelTitle.text = values.title
         textField.placeholder = values.placeholder
-        confirmButton.setTitle(values.button, for: .normal)
+        confirmButton.setButtonTitle(title: values.button)
     }
     
     func displayCreatePassword() {
         router.routeToCreatePassword()
+    }
+    
+    func displayInvalidEmail() {
+        stopLoading()
+        setError(text: "Email inválido.")
     }
 }

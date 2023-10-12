@@ -11,6 +11,8 @@ import UIKit
 
 protocol CreatePasswordRouterProtocol: AnyObject {
     var controller: UIViewController? { get set }
+    
+    func routeToAccountCreated()
 }
 
 protocol CreatePasswordRouterDataPassing: AnyObject {
@@ -25,4 +27,9 @@ class CreatePasswordRouter: NSObject, CreatePasswordRouterProtocol, CreatePasswo
     // MARK: - Initializer
     
     override init() { }
+    
+    func routeToAccountCreated(){
+        let destination = AccountCreatedViewController()
+        controller?.navigationController?.pushViewController(destination, animated: true)
+    }
 }

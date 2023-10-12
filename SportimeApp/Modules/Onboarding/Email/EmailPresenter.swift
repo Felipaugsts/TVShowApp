@@ -14,6 +14,7 @@ protocol EmailPresenterProtocol: AnyObject {
     
     func presentScreenValues()
     func presentCreatePassword()
+    func presentInvalidEmail()
 }
 
 // MARK: - EmailPresenter Implementation
@@ -36,5 +37,9 @@ class EmailPresenter: EmailPresenterProtocol {
     
     func presentCreatePassword() {
         controller?.displayCreatePassword()
+    }
+    
+    func presentInvalidEmail() {
+        controller?.displayInvalidEmail()
     }
 }

@@ -30,6 +30,7 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
     
     private var firstPassword = false
     private var service: AuthServiceLogic
+    private var password: String = ""
     
     // MARK: - Initializer
     
@@ -49,27 +50,39 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
             return
         }
         
-        guard firstPassword else {
+        if !firstPassword {
             firstPassword = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.password = password
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.presenter?.presentConfirmPassword()
             }
             return
         }
         
-        guard let email = email else {
+        guard let email = email, self.password == password else {
+            handlePasswordMismatch()
             return
         }
         
+        createAccount(email: email, password: password)
+    }
+
+    private func handlePasswordMismatch() {
+        password = ""
+        firstPassword = false
+        presenter?.presentInvalidPassword()
+    }
+
+    private func createAccount(email: String, password: String) {
         service.createAccount(email: email, password: password) { _, error in
             if let error = error {
                 print(error)
-                return
+            } else {
+                self.updateUserProfile()
             }
-            self.updateUserProfile()
         }
-        
     }
+
     
     private func updateUserProfile() {
         guard let name = name else {

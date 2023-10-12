@@ -9,32 +9,53 @@ import SDKCommon
 import UIKit
 
 class OnboardingLayoutController: UIViewController {
-    
+
     var labelTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .darkGray
+        label.textColor = DSColor.secondaryDark
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.font = .circularBold(size: 32)
         label.textAlignment = .center
+        return label
+    }()
+    
+    var labelSubtitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = DSColor.darkest
+        label.numberOfLines = 0
+        label.font = .circularBold(size: 15)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    var errorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = DSColor.negative
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textAlignment = .center
+        label.isHidden = true
         return label
     }()
     
     var textField: UITextField = {
         let textField = UITextField()
-        textField.tintColor = .darkGray
-        textField.textColor = .darkGray
+        textField.tintColor = DSColor.secondary
+        textField.textColor = DSColor.darkest
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textAlignment = .center
         textField.resignFirstResponder()
     
         // Change font and size for the text field
-        textField.font = UIFont(name: "Helvetica-Bold", size: 20.0) // Change the font and size as needed
+        textField.font = .circularBold(size: 20) // Change the font and size as needed
         
         // Change placeholder text size
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "Helvetica-Bold", size: 20.0) ?? UIFont.systemFont(ofSize: 17.0), // Change the placeholder font and size as needed
-            .foregroundColor: UIColor.lightGray // Change the placeholder text color if desired
+            .font: UIFont.circularBold(size: 20),
+            .foregroundColor: DSColor.dark // Change the placeholder text color if desired
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "Nome completo", attributes: attributes)
         return textField
@@ -43,7 +64,8 @@ class OnboardingLayoutController: UIViewController {
     var textfieldUnderline: UIView = {
         let underline = UIView()
         underline.translatesAutoresizingMaskIntoConstraints = false
-        underline.backgroundColor = .black
+        underline.backgroundColor = DSColor.secondary
+        
         return underline
     }()
     
@@ -66,9 +88,12 @@ class OnboardingLayoutController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupViewLayout()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        displayKeyboard()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        stopLoading()
         PanNotifications.shared.removeAllObservers()
     }
     
@@ -86,20 +111,28 @@ class OnboardingLayoutController: UIViewController {
         view.addSubview(textField)
         view.addSubview(textfieldUnderline)
         view.addSubview(confirmButton)
+        view.addSubview(errorLabel)
+        view.addSubview(labelSubtitle)
         
         NSLayoutConstraint.activate([
             labelTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             labelTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            labelSubtitle.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: 20),
+            labelSubtitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             // Password
-            textField.topAnchor.constraint(lessThanOrEqualTo: labelTitle.bottomAnchor, constant: 80),
+            textField.topAnchor.constraint(lessThanOrEqualTo: labelSubtitle.bottomAnchor, constant: 60),
             textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            textField.heightAnchor.constraint(equalToConstant: 50),
             
             textfieldUnderline.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20),
             textfieldUnderline.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             textfieldUnderline.heightAnchor.constraint(equalToConstant: 1),
-            textfieldUnderline.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            textfieldUnderline.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            errorLabel.topAnchor.constraint(equalTo: textfieldUnderline.bottomAnchor, constant: 10),
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             confirmButton.heightAnchor.constraint(equalToConstant: 55),
             confirmBottom,
@@ -119,6 +152,24 @@ class OnboardingLayoutController: UIViewController {
     public func stopLoading() {
         view.isUserInteractionEnabled = true
         confirmButton.stopLoading()
+    }
+    
+    public func setError(text: String) {
+        textfieldUnderline.backgroundColor = DSColor.negative
+        errorLabel.text = text
+        errorLabel.isHidden = false
+    }
+    
+    public func hideError() {
+        textfieldUnderline.backgroundColor = DSColor.secondary
+        errorLabel.text = ""
+        errorLabel.isHidden = true
+    }
+    
+    public func displayKeyboard(time: Double = 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + time) {
+            self.textField.becomeFirstResponder()
+        }
     }
     
     private func setupViewLayout() {

@@ -18,53 +18,6 @@
             endingLineNumber = "37"
             landmarkName = "authenticate(with:password:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "02641E4A-D5FF-40B1-B06C-20680DF7673B - f6489a0d3b544604"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "540">
-               </Location>
-               <Location
-                  uuid = "02641E4A-D5FF-40B1-B06C-20680DF7673B - f6489a0d3b544667"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "440">
-               </Location>
-               <Location
-                  uuid = "02641E4A-D5FF-40B1-B06C-20680DF7673B - f6489a0d3b544604"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "440">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,83 +34,22 @@
             endingLineNumber = "39"
             landmarkName = "authenticate(with:password:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8ECEC57C-1908-4FA1-98DD-D3577804493D - f6489a0d3b5447ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "228">
-               </Location>
-               <Location
-                  uuid = "8ECEC57C-1908-4FA1-98DD-D3577804493D - f6489a0d3b5447ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "636">
-               </Location>
-               <Location
-                  uuid = "8ECEC57C-1908-4FA1-98DD-D3577804493D - f6489a0d3b5447ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "644">
-               </Location>
-               <Location
-                  uuid = "8ECEC57C-1908-4FA1-98DD-D3577804493D - f6489a0d3b544625"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "540">
-               </Location>
-               <Location
-                  uuid = "8ECEC57C-1908-4FA1-98DD-D3577804493D - f6489a0d3b5447ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SDKCommon.AuthService.authenticate(with: Swift.String, password: Swift.String, completion: (Swift.Optional&lt;()&gt;, Swift.Optional&lt;SDKCommon.APIError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "SDKCommon"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipeas/Desktop/Personal/Common/SDKCommon/Classes/OAuth/AuthService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "540">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F693A6AE-0134-429E-8DE5-9EBE6261205D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SportimeApp/Modules/Onboarding/Password/CreatePasswordInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "updateUserProfile()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

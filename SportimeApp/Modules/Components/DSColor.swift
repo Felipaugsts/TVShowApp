@@ -34,3 +34,25 @@ public struct DSColor {
     public static let negativeDark = #colorLiteral(red: 0.9231129289, green: 0.2919047475, blue: 0.2485084534, alpha: 1)
 }
 
+extension UIFont {
+    public static func circularBook(size: CGFloat) -> UIFont {
+        if let font = UIFont(name: "CircularXX-Book", size: size) {
+            return font
+        } else {
+            // Handle the case where the font couldn't be loaded.
+            // You can return a default font or handle the error as needed.
+            return UIFont.systemFont(ofSize: size)
+        }
+    }
+    
+    public static func circularBold(size: CGFloat) -> UIFont {
+        if let font = UIFont(name: "CircularXX-Bold", size: size) {
+            return font
+        } else {
+            // Handle the case where the font couldn't be loaded.
+            // You can return a default font or handle the error as needed.
+            return UIFont.boldSystemFont(ofSize: size)
+        }
+    }
+}
+

@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "Mailbox.json",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -14,6 +14,7 @@ public protocol LoginRouterLogic {
     var controller: UIViewController? { get set }
     
     func routeToHome()
+    func routeToForgotPassword()
 }
 
 public  class LoginRouter: LoginRouterLogic {
@@ -22,7 +23,11 @@ public  class LoginRouter: LoginRouterLogic {
     // MARK: - Public Methods
     
     public func routeToHome() {
-        controller?.navigationController?.pushViewController(HomeViewController(), animated: false)
-        controller?.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        UIApplication.setRootViewControllerWithNavigation(HomeViewController())
+    }
+    
+    public func routeToForgotPassword() {
+        let destination = ForgotPasswordViewController()
+        controller?.navigationController?.pushViewController(destination, animated: true)
     }
 }

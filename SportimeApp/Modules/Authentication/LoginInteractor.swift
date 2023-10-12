@@ -14,7 +14,6 @@ public protocol LoginInteractorLogic {
     var presenter: LoginPresenterLogic? { get set }
     
     func authenticate(email: String, password: String)
-    func tapForgotPassword()
     func loadValues()
 }
 
@@ -57,9 +56,5 @@ public class LoginInteractor: LoginInteractorLogic {
     
     public func loadValues() {
         presenter?.presentScreenValues()
-    }
-    
-    public func tapForgotPassword() {
-        
     }
 }

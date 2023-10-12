@@ -12,6 +12,8 @@ import SDKCommon
 
 protocol FullNameViewControllerProtocol: AnyObject {
     func displayScreenValues(_ values: FullNameModel.ScreenValues)
+    func displayEmail()
+    func displayInvalidUsername()
 }
 
 // MARK: - FullNameViewController
@@ -51,8 +53,10 @@ class FullNameViewController: OnboardingLayoutController {
     
     private func addActions() {
         confirmButton.addAction {
+            self.hideError()
             self.textField.resignFirstResponder()
-            self.router.routeToEmail(self.textField.text)
+            self.startLoading()
+            self.interactor.validate(self.textField.text)
         }
     }
 }
@@ -64,6 +68,15 @@ extension FullNameViewController: FullNameViewControllerProtocol {
     func displayScreenValues(_ values: FullNameModel.ScreenValues) {
         labelTitle.text = values.title
         textField.placeholder = values.placeholder
-        confirmButton.setTitle(values.button, for: .normal)
+        confirmButton.setButtonTitle(title: values.button)
+    }
+    
+    func displayEmail() {
+        router.routeToEmail(textField.text)
+    }
+    
+    func displayInvalidUsername() {
+        stopLoading()
+        setError(text: "Nome inválido.")
     }
 }

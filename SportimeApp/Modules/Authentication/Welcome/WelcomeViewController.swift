@@ -8,6 +8,7 @@
 import UIKit
 
 // MARK: - Protocol
+
 public protocol WelcomeViewControllerLogic {
     func displayScreenValues(_ values: WelcomeModel.ScreenValues)
     func displayLogin()
@@ -19,7 +20,7 @@ public class WelcomeViewController: UIViewController {
     // MARK: - Components
     
     lazy var background: UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         image.image = UIImage(named: "loginBG")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
@@ -27,7 +28,7 @@ public class WelcomeViewController: UIViewController {
     }()
     
     lazy var signInButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.tintColor = .blue
         button.backgroundColor = DSColor.primary
         button.layer.cornerRadius = 16
@@ -37,7 +38,7 @@ public class WelcomeViewController: UIViewController {
     }()
     
     lazy var registerButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.tintColor = .blue
         button.backgroundColor = DSColor.medium
         button.layer.cornerRadius = 16
@@ -45,7 +46,7 @@ public class WelcomeViewController: UIViewController {
         button.addTarget(self, action: #selector(displayRegister), for: .touchUpInside)
         return button
     }()
-
+    
     
     // MARK: - Variables
     
@@ -76,9 +77,12 @@ public class WelcomeViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
+    public override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-
         setupLayout()
     }
     

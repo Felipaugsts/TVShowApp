@@ -13,6 +13,8 @@ protocol FullNamePresenterProtocol: AnyObject {
     var controller: FullNameViewControllerProtocol? { get set }
     
     func presentScreenValues()
+    func presentEmail()
+    func presentInvalidUsername()
 }
 
 // MARK: - FullNamePresenter Implementation
@@ -31,5 +33,13 @@ class FullNamePresenter: FullNamePresenterProtocol {
                                                 placeholder: "Nome completo",
                                                 button: "Continuar")
         controller?.displayScreenValues(values)
+    }
+    
+    func presentEmail() {
+        controller?.displayEmail()
+    }
+    
+    func presentInvalidUsername() {
+        controller?.displayInvalidUsername()
     }
 }

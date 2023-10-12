@@ -24,7 +24,9 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         let textField = UITextField()
         textField.tintColor = .darkGray
         textField.textColor = .darkGray
+        textField.keyboardType = .emailAddress
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.font = .circularBook(size: 16)
         return textField
     }()
     
@@ -41,6 +43,7 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         textField.textColor = .darkGray
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
+        textField.font = .circularBook(size: 16)
         return textField
     }()
 
@@ -56,14 +59,14 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .darkGray
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        label.font = .circularBold(size: 32)
         return label
     }()
 
     lazy var signInButton: Button = {
        let button = Button()
         button.tintColor = DSColor.lightest
-        button.backgroundColor = DSColor.primaryDark
+        button.backgroundColor = DSColor.primary
         button.layer.cornerRadius = 16
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(confirmButton), for: .touchUpInside)
@@ -73,7 +76,7 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     lazy var forgotPasswordButton: Button = {
        let button = Button()
         button.tintColor = DSColor.lightest
-        button.backgroundColor = DSColor.primaryDark
+        button.backgroundColor = DSColor.primary
         button.layer.cornerRadius = 16
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(forgotPassword), for: .touchUpInside)
@@ -111,6 +114,8 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     
     override func viewWillAppear(_ animated: Bool) {
         stopLoading()
+//        navigationController?.isNavigationBarHidden = true
+        navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
@@ -124,6 +129,8 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     
     override func viewWillDisappear(_ animated: Bool) {
         removeKeyboardListener()
+//        navigationController?.isNavigationBarHidden = false
+        navigationItem.hidesBackButton = false
     }
     
     // MARK: - Private Methods
@@ -157,7 +164,7 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     
     @objc
     private func forgotPassword() {
-        interactor.tapForgotPassword()
+        router.routeToForgotPassword()
     }
     
     public func displayHomeScreen() {
