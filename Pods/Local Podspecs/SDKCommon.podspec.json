@@ -1,6 +1,6 @@
 {
   "name": "SDKCommon",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "summary": "A short description of SDKCommon.",
   "homepage": "https://github.com/Felipaugsts/Common",
   "license": {
@@ -12,10 +12,10 @@
   },
   "source": {
     "git": "git@github.com:Felipaugsts/Common.git",
-    "tag": "0.0.6"
+    "tag": "0.0.7"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "13.0"
   },
   "source_files": "SDKCommon/Classes/**/*",
   "dependencies": {
@@ -41,6 +41,9 @@
       "20.0.0"
     ],
     "lottie-ios": [
+
+    ],
+    "SnapKit": [
 
     ]
   }

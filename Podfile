@@ -12,5 +12,6 @@ target 'MinhasDespesas' do
   pod 'Firebase/Core'
   pod 'FirebaseFirestoreSwift', '> 7.0-beta'
   pod 'KeychainSwift', '20.0.0'
+  pod 'SnapKit', '~> 5.0.0'
   pod 'SDKCommon', path: '../Common'
 end

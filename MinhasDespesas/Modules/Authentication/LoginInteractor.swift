@@ -38,19 +38,15 @@ public class LoginInteractor: LoginInteractorLogic {
     public func authenticate(email: String, password: String) {
         service.authenticate(with: email, password: password) {[weak self] _, error in
             
-            if let error = error {
-                switch error {
-                case .customError(statusCode: 403, result: nil):
-                    self?.presenter?.presentWrongPassword()
-                    
-                default:
-                    break
-                }
-            } else {
-                self?.biometryService.setBiometryEnabled(true)
-                self?.biometryService.setBiometryData(email, password)
-                self?.presenter?.presentHomeScreen()
+            if error != nil {
+                self?.presenter?.presentWrongPassword()
+                return
             }
+            
+            self?.biometryService.setBiometryEnabled(true)
+            self?.biometryService.setBiometryData(email, password)
+            self?.presenter?.presentHomeScreen()
+            
         }
     }
     

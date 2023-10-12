@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import SDKCommon
 
 // MARK: - IForgotPasswordConfirmationViewController
 

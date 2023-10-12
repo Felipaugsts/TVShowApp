@@ -812,15 +812,17 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.2.0)
-  - SDKCommon (0.0.6):
+  - SDKCommon (0.0.7):
     - Firebase/Auth
     - Firebase/Core
     - Firebase/Firestore
     - FirebaseFirestoreSwift (> 7.0-beta)
     - KeychainSwift (= 20.0.0)
     - lottie-ios
+    - SnapKit
     - Swinject
     - SwinjectAutoregistration
+  - SnapKit (5.0.1)
   - Swinject (2.8.3)
   - SwinjectAutoregistration (2.8.3):
     - Swinject (~> 2.8.3)
@@ -833,6 +835,7 @@ DEPENDENCIES:
   - KeychainSwift (= 20.0.0)
   - lottie-ios
   - SDKCommon (from `../Common`)
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -859,6 +862,7 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - SnapKit
     - Swinject
     - SwinjectAutoregistration
 
@@ -890,10 +894,11 @@ SPEC CHECKSUMS:
   lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
-  SDKCommon: e6898ae3e1a753718ad92486e90300bc98d83671
+  SDKCommon: cdde53a9940015a0d92c3cf8ddbe64ccac82f940
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
   SwinjectAutoregistration: e3ee378dc458acf78d176fc7fec3902603452667
 
-PODFILE CHECKSUM: c07529e945d883d17959ea7a5dbcdb698d766f42
+PODFILE CHECKSUM: 8aefc9042e2859b2b23be70e5a631a8c3dbd4ed8
 
 COCOAPODS: 1.11.3

@@ -20,12 +20,16 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
 
     // MARK: - Components
     
+    var module: PanBottomModuleBaseView?
+    
     var textField: UITextField = {
         let textField = UITextField()
         textField.tintColor = .darkGray
         textField.textColor = .darkGray
         textField.keyboardType = .emailAddress
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.autocorrectionType = .no
+        textField.textContentType = .oneTimeCode
         textField.font = .circularBook(size: 16)
         return textField
     }()
@@ -43,6 +47,7 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
         textField.textColor = .darkGray
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
+        textField.autocorrectionType = .no
         textField.font = .circularBook(size: 16)
         return textField
     }()
@@ -115,7 +120,7 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     override func viewWillAppear(_ animated: Bool) {
         stopLoading()
 //        navigationController?.isNavigationBarHidden = true
-        navigationItem.hidesBackButton = true
+//        navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
@@ -172,8 +177,21 @@ class LoginViewController: UIViewController, LoginViewControllerLogic {
     }
     
     public func displayWrongPassword() {
+        passwordField.text = ""
+        textField.resignFirstResponder()
+        passwordField.resignFirstResponder()
         stopLoading()
-        passwordUnderline.backgroundColor = DSColor.negative
+        
+        let uiView = ModuleScreen(image: "error404",
+                                  labelText: "Dados inválidos",
+                                  labelSubtitle: "Confira se seu EMAIL e sua senha estão corretos.",
+                                  button: "Tentar novamente",
+                                  secondaryButton: "Esqueci senha")
+        
+        uiView.delegate = self
+        module = PanBottomModuleBaseView(withView: uiView)
+        module?.delegate = self
+        module?.appear()
     }
     
     func displayScreenValues(_ values: LoginModel.ScreenValues) {
@@ -315,4 +333,28 @@ extension LoginViewController {
          }
          animator.startAnimation()
      }
+}
+
+extension LoginViewController: PanBottomModuleBaseViewDelegate, ModuleScreenProtocol {
+    func didTapPrimary() {
+        module?.hide()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.passwordField.becomeFirstResponder()
+        }
+    }
+    
+    func didTapSecondary() {
+        module?.hide()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.router.routeToForgotPassword()
+        }
+    }
+    
+    func didTapButton() { }
+    
+    func didCloseAlert() { }
+    
+    func didScrollView(_ scrollView: UIScrollView) -> Void { }
 }

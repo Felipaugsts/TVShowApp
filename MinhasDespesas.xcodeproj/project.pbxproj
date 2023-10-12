@@ -41,8 +41,9 @@
 		C56BD8CC2AD76C3C00FCDFEF /* ForgotPasswordConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8C72AD76C3C00FCDFEF /* ForgotPasswordConfirmationViewController.swift */; };
 		C56BD8CD2AD76C3C00FCDFEF /* ForgotPasswordConfirmationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8C82AD76C3C00FCDFEF /* ForgotPasswordConfirmationInteractor.swift */; };
 		C56BD8CE2AD76C3C00FCDFEF /* ForgotPasswordConfirmationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8C92AD76C3C00FCDFEF /* ForgotPasswordConfirmationModel.swift */; };
+		C56BD8E12AD83DB300FCDFEF /* ModuleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8E02AD83DB300FCDFEF /* ModuleScreen.swift */; };
+		C56BD8E52AD84F3200FCDFEF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8E42AD84F3200FCDFEF /* UIFont+Extension.swift */; };
 		C59285302A59B53700A35072 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592852F2A59B53700A35072 /* SplashViewController.swift */; };
-		C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60A2A59BC4700D7DEA1 /* DSColor.swift */; };
 		C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */; };
 		C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */; };
 		C5B1CEFF2ACC8BFA00E0DB7C /* FullNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1CEFA2ACC8BFA00E0DB7C /* FullNamePresenter.swift */; };
@@ -112,8 +113,9 @@
 		C56BD8D22AD773AA00FCDFEF /* CircularXX-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CircularXX-Bold.otf"; path = "../../../../../pan/mobile-ios--banco-digital/Pods/DSKitFonts/Sources/Resources/fonts/CircularXX-Bold.otf"; sourceTree = "<group>"; };
 		C56BD8D32AD773AA00FCDFEF /* CircularXX-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CircularXX-Book.otf"; path = "../../../../../pan/mobile-ios--banco-digital/Pods/DSKitFonts/Sources/Resources/fonts/CircularXX-Book.otf"; sourceTree = "<group>"; };
 		C56BD8D42AD773AB00FCDFEF /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MaterialIcons-Regular.ttf"; path = "../../../../../pan/mobile-ios--banco-digital/Pods/DSKitFonts/Sources/Resources/fonts/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
+		C56BD8E02AD83DB300FCDFEF /* ModuleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleScreen.swift; sourceTree = "<group>"; };
+		C56BD8E42AD84F3200FCDFEF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		C592852F2A59B53700A35072 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		C598D60A2A59BC4700D7DEA1 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
 		C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		C5B1CEFA2ACC8BFA00E0DB7C /* FullNamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNamePresenter.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C50FA9F82ACCA20C000F9083 /* OnboardingLayout.swift */,
+				C56BD8E02AD83DB300FCDFEF /* ModuleScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			children = (
 				C50FAA072ACCAB3A000F9083 /* UIButton+Extension.swift */,
 				C50FAA0D2ACCDAEF000F9083 /* OnKeyboardChange.swift */,
+				C56BD8E42AD84F3200FCDFEF /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -428,7 +432,6 @@
 				C56BD8D32AD773AA00FCDFEF /* CircularXX-Book.otf */,
 				C56BD8D42AD773AB00FCDFEF /* MaterialIcons-Regular.ttf */,
 				C5EF08CF2A63544900E141AA /* Button.swift */,
-				C598D60A2A59BC4700D7DEA1 /* DSColor.swift */,
 				C52D37C12AC63EF900BA4B78 /* BudgetHomeView.swift */,
 			);
 			path = Components;
@@ -579,14 +582,15 @@
 				C5EF08DD2A63752000E141AA /* HomeViewController.swift in Sources */,
 				C52D37C22AC63EF900BA4B78 /* BudgetHomeView.swift in Sources */,
 				C5BB40DF2AB3C9C500051633 /* LoginModel.swift in Sources */,
+				C56BD8E52AD84F3200FCDFEF /* UIFont+Extension.swift in Sources */,
 				C5EF08D02A63544900E141AA /* Button.swift in Sources */,
 				C5B1CF032ACC8BFA00E0DB7C /* FullNameModel.swift in Sources */,
 				C50FAA0E2ACCDAEF000F9083 /* OnKeyboardChange.swift in Sources */,
 				C56BD8B32AD730F600FCDFEF /* AccountCreatedRouter.swift in Sources */,
 				C56BD8C02AD769AC00FCDFEF /* ForgotPasswordInteractor.swift in Sources */,
 				C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */,
+				C56BD8E12AD83DB300FCDFEF /* ModuleScreen.swift in Sources */,
 				C5DC10E02AD61628000E1D50 /* CreatePasswordPresenter.swift in Sources */,
-				C598D60B2A59BC4700D7DEA1 /* DSColor.swift in Sources */,
 				C520F92B2A5CB28800C2338A /* WelcomeRouter.swift in Sources */,
 				C5B1CF022ACC8BFA00E0DB7C /* FullNameInteractor.swift in Sources */,
 				C5DC10E22AD61628000E1D50 /* CreatePasswordViewController.swift in Sources */,

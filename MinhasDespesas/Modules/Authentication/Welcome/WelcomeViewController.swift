@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDKCommon
 
 // MARK: - Protocol
 
