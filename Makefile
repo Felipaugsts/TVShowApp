@@ -23,4 +23,4 @@ reset:
 	make project
 
 open:
-	open SportimeApp.xcworkspace
+	open MinhasDespesas.xcworkspace

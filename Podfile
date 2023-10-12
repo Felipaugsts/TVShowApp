@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'SportimeApp' do
+target 'MinhasDespesas' do
   
   use_frameworks!
 
-  # Pods for SportimeApp
+  # Pods for MinhasDespesas
   pod 'lottie-ios'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'

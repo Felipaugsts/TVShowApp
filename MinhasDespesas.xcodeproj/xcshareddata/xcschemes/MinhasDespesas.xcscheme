@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1420"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1F5FACC0E6CF65BD8F77DC62139EBAB"
-               BuildableName = "Pods_SportimeApp.framework"
-               BlueprintName = "Pods-SportimeApp"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "C537407B2A59AD0100DE8426"
+               BuildableName = "MinhasDespesas.app"
+               BlueprintName = "MinhasDespesas"
+               ReferencedContainer = "container:MinhasDespesas.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C537407B2A59AD0100DE8426"
+            BuildableName = "MinhasDespesas.app"
+            BlueprintName = "MinhasDespesas"
+            ReferencedContainer = "container:MinhasDespesas.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C537407B2A59AD0100DE8426"
+            BuildableName = "MinhasDespesas.app"
+            BlueprintName = "MinhasDespesas"
+            ReferencedContainer = "container:MinhasDespesas.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

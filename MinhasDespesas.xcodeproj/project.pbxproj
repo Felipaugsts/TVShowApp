@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A4148B097BE9685628A3C4D /* Pods_MinhasDespesas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1892D667DB3F67EE3EE690B5 /* Pods_MinhasDespesas.framework */; };
 		C50FA9F92ACCA20C000F9083 /* OnboardingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FA9F82ACCA20C000F9083 /* OnboardingLayout.swift */; };
 		C50FAA012ACCAA44000F9083 /* EmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FA9FC2ACCAA44000F9083 /* EmailPresenter.swift */; };
 		C50FAA022ACCAA44000F9083 /* EmailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FA9FD2ACCAA44000F9083 /* EmailRouter.swift */; };
@@ -65,12 +66,14 @@
 		C5EF08D92A6373B500E141AA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08D82A6373B500E141AA /* LoginPresenter.swift */; };
 		C5EF08DB2A63749C00E141AA /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08DA2A63749C00E141AA /* LoginRouter.swift */; };
 		C5EF08DD2A63752000E141AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08DC2A63752000E141AA /* HomeViewController.swift */; };
-		F5EA0E8816B466D33C264936 /* Pods_SportimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1892D667DB3F67EE3EE690B5 /* Pods_MinhasDespesas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinhasDespesas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.debug.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		243AE985F2CFAFC8BCEB54D9 /* Pods-MinhasDespesas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhasDespesas.debug.xcconfig"; path = "Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas.debug.xcconfig"; sourceTree = "<group>"; };
 		62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.release.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.release.xcconfig"; sourceTree = "<group>"; };
+		8ECF219DA582EA6B1DD8067B /* Pods-MinhasDespesas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhasDespesas.release.xcconfig"; path = "Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas.release.xcconfig"; sourceTree = "<group>"; };
 		C50FA9F82ACCA20C000F9083 /* OnboardingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLayout.swift; sourceTree = "<group>"; };
 		C50FA9FC2ACCAA44000F9083 /* EmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPresenter.swift; sourceTree = "<group>"; };
 		C50FA9FD2ACCAA44000F9083 /* EmailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRouter.swift; sourceTree = "<group>"; };
@@ -82,7 +85,7 @@
 		C520F9282A5CB27500C2338A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		C52D37C12AC63EF900BA4B78 /* BudgetHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetHomeView.swift; sourceTree = "<group>"; };
-		C537407C2A59AD0100DE8426 /* SportimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C537407C2A59AD0100DE8426 /* MinhasDespesas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhasDespesas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C537407F2A59AD0100DE8426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53740812A59AD0100DE8426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C53740882A59AD0300DE8426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +137,6 @@
 		C5EF08D82A6373B500E141AA /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C5EF08DA2A63749C00E141AA /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		C5EF08DC2A63752000E141AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5EA0E8816B466D33C264936 /* Pods_SportimeApp.framework in Frameworks */,
+				6A4148B097BE9685628A3C4D /* Pods_MinhasDespesas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +154,7 @@
 		0F0112F97CA25DE0808E2A8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F96B41D623CF9E0A089D5F1D /* Pods_SportimeApp.framework */,
+				1892D667DB3F67EE3EE690B5 /* Pods_MinhasDespesas.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +164,8 @@
 			children = (
 				1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */,
 				62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */,
+				243AE985F2CFAFC8BCEB54D9 /* Pods-MinhasDespesas.debug.xcconfig */,
+				8ECF219DA582EA6B1DD8067B /* Pods-MinhasDespesas.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -243,7 +247,7 @@
 		C53740732A59AD0100DE8426 = {
 			isa = PBXGroup;
 			children = (
-				C537407E2A59AD0100DE8426 /* SportimeApp */,
+				C537407E2A59AD0100DE8426 /* MinhasDespesas */,
 				C537407D2A59AD0100DE8426 /* Products */,
 				BCC32C615D564C606595CD28 /* Pods */,
 				0F0112F97CA25DE0808E2A8B /* Frameworks */,
@@ -253,12 +257,12 @@
 		C537407D2A59AD0100DE8426 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C537407C2A59AD0100DE8426 /* SportimeApp.app */,
+				C537407C2A59AD0100DE8426 /* MinhasDespesas.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C537407E2A59AD0100DE8426 /* SportimeApp */ = {
+		C537407E2A59AD0100DE8426 /* MinhasDespesas */ = {
 			isa = PBXGroup;
 			children = (
 				C5EF08C12A633D8800E141AA /* GoogleService-Info.plist */,
@@ -267,7 +271,7 @@
 				C5BB40F22AB3D41000051633 /* Infrastructure */,
 				C5BB40F42AB3D62400051633 /* Assets */,
 			);
-			path = SportimeApp;
+			path = MinhasDespesas;
 			sourceTree = "<group>";
 		};
 		C53740932A59AF3400DE8426 /* SplashScreen */ = {
@@ -449,9 +453,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C537407B2A59AD0100DE8426 /* SportimeApp */ = {
+		C537407B2A59AD0100DE8426 /* MinhasDespesas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C53740902A59AD0300DE8426 /* Build configuration list for PBXNativeTarget "SportimeApp" */;
+			buildConfigurationList = C53740902A59AD0300DE8426 /* Build configuration list for PBXNativeTarget "MinhasDespesas" */;
 			buildPhases = (
 				F46F38BCA4062A0D2A3E96FA /* [CP] Check Pods Manifest.lock */,
 				C53740782A59AD0100DE8426 /* Sources */,
@@ -463,9 +467,9 @@
 			);
 			dependencies = (
 			);
-			name = SportimeApp;
+			name = MinhasDespesas;
 			productName = SportimeApp;
-			productReference = C537407C2A59AD0100DE8426 /* SportimeApp.app */;
+			productReference = C537407C2A59AD0100DE8426 /* MinhasDespesas.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -483,7 +487,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C53740772A59AD0100DE8426 /* Build configuration list for PBXProject "SportimeApp" */;
+			buildConfigurationList = C53740772A59AD0100DE8426 /* Build configuration list for PBXProject "MinhasDespesas" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -496,7 +500,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C537407B2A59AD0100DE8426 /* SportimeApp */,
+				C537407B2A59AD0100DE8426 /* MinhasDespesas */,
 			);
 		};
 /* End PBXProject section */
@@ -521,15 +525,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SportimeApp/Pods-SportimeApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SportimeApp/Pods-SportimeApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportimeApp/Pods-SportimeApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F46F38BCA4062A0D2A3E96FA /* [CP] Check Pods Manifest.lock */ = {
@@ -547,7 +551,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SportimeApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MinhasDespesas-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -738,7 +742,7 @@
 		};
 		C53740912A59AD0300DE8426 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */;
+			baseConfigurationReference = 243AE985F2CFAFC8BCEB54D9 /* Pods-MinhasDespesas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -746,7 +750,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5QYSPM6K5Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SportimeApp/Info.plist;
+				INFOPLIST_FILE = MinhasDespesas/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Minhas Despesas";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -756,7 +761,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Felipeas.SportimeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Felipeas.MinhasDespesas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -769,7 +774,7 @@
 		};
 		C53740922A59AD0300DE8426 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */;
+			baseConfigurationReference = 8ECF219DA582EA6B1DD8067B /* Pods-MinhasDespesas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -777,7 +782,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5QYSPM6K5Z;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SportimeApp/Info.plist;
+				INFOPLIST_FILE = MinhasDespesas/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Minhas Despesas";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -787,7 +793,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Felipeas.SportimeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Felipeas.MinhasDespesas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -801,7 +807,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C53740772A59AD0100DE8426 /* Build configuration list for PBXProject "SportimeApp" */ = {
+		C53740772A59AD0100DE8426 /* Build configuration list for PBXProject "MinhasDespesas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C537408E2A59AD0300DE8426 /* Debug */,
@@ -810,7 +816,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C53740902A59AD0300DE8426 /* Build configuration list for PBXNativeTarget "SportimeApp" */ = {
+		C53740902A59AD0300DE8426 /* Build configuration list for PBXNativeTarget "MinhasDespesas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C53740912A59AD0300DE8426 /* Debug */,
