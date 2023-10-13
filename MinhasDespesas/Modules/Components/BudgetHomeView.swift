@@ -11,6 +11,7 @@ import SDKCommon
 
 protocol BudgetHomeViewDelegate: AnyObject {
     func tapAddExpense()
+    func tapSelectDate()
 }
 
 class BudgetHomeView: UIView {
@@ -41,21 +42,31 @@ class BudgetHomeView: UIView {
         return label
     }()
     
-    public var currentMonthLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Outubro"
-        label.font = UIFont.systemFont(ofSize: 26.0)
-        label.textColor = DSColor.white
-        label.translatesAutoresizingMaskIntoConstraints = false // Important for Auto Layout
-        return label
+    
+    public var currentMonthLabel: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("2023", for: .normal)
+        button.titleLabel?.font = .circularBook(size: 20)
+        return button
+    }()
+    
+    public var yearDisplayed: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("2023", for: .normal)
+        button.titleLabel?.font = .circularBook(size: 14)
+        return button
     }()
     
     public var priceLabel: UILabel = {
         let label = UILabel()
         label.text = "$5,023"
         label.font = UIFont.systemFont(ofSize: 36.0)
-        label.textColor = DSColor.darkest // Assuming DSColor is defined elsewhere
-        label.translatesAutoresizingMaskIntoConstraints = false // Important for Auto Layout
+        label.textColor = DSColor.darkest
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -97,7 +108,12 @@ class BudgetHomeView: UIView {
     }()
     
     weak var delegate: BudgetHomeViewDelegate?
-    
+    public var data: BudgetMonthDate? {
+        didSet {
+            priceLabel.text = data?.totalIncome
+            currentMonthLabel.setTitle(data?.currentMonth ?? "", for: .normal)
+        }
+    }
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -125,10 +141,13 @@ class BudgetHomeView: UIView {
         addSubview(budgeInsideView)
         
         backgroundView.addSubview(currentMonthLabel)
+        backgroundView.addSubview(yearDisplayed)
         
         budgeInsideView.addSubview(priceLabel)
         budgeInsideView.addSubview(priceTotalLabel)
         budgeInsideView.addSubview(addExpenseButton)
+        
+        currentMonthLabel.bringSubviewToFront(backgroundView)
     }
     
     private func setupConstrainst() {
@@ -139,7 +158,11 @@ class BudgetHomeView: UIView {
             backgroundView.leftAnchor.constraint(equalTo: leftAnchor),
             backgroundView.heightAnchor.constraint(equalToConstant: 200),
             currentMonthLabel.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor, constant: -25),
-            currentMonthLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            currentMonthLabel.rightAnchor.constraint(equalTo: backgroundView.rightAnchor),
+            currentMonthLabel.leftAnchor.constraint(equalTo: backgroundView.leftAnchor),
+            
+            yearDisplayed.topAnchor.constraint(equalTo: currentMonthLabel.bottomAnchor, constant: -10),
+            yearDisplayed.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             
             budgeInsideView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
             budgeInsideView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15),
@@ -160,10 +183,35 @@ class BudgetHomeView: UIView {
     
     func addActions() {
         addExpenseButton.addTarget(self, action: #selector(tapAddExpense), for: .touchUpInside)
+        
+        backgroundView.addTapGesture(target: self, action: #selector(tapSelect))
+        
+        currentMonthLabel.addAction {
+            self.tapSelect()
+        }
+        
+        yearDisplayed.addAction {
+            self.tapSelect()
+        }
+    }
+    
+    @objc
+    func tapSelect() {
+        delegate?.tapSelectDate()
     }
     
     @objc
     func tapAddExpense() {
         delegate?.tapAddExpense()
+    }
+}
+
+public struct BudgetMonthDate {
+    public var totalIncome: String
+    public var currentMonth: String
+}
+extension Array where Element == MonthData {
+    func getCurrentMonthData(forMonth month: String) -> MonthData? {
+        return first { $0.month == month }
     }
 }

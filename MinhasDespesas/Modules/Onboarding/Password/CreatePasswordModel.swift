@@ -14,4 +14,11 @@ enum CreatePasswordModel {
         var placeholder: String?
         var button: String?
 	}
+    
+    struct User: Codable {
+        var username: String? = ""
+        var name: String? = ""
+        var email: String? = ""
+        var userUID: String? = ""
+    }
 }

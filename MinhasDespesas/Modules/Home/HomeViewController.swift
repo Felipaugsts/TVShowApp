@@ -1,57 +1,128 @@
 //
 //  HomeViewController.swift
-//  SportimeApp
+//  MinhasDespesas
 //
-//  Created by Felipe Augusto Silva on 15/07/23.
-//
+//  Created by Felipe Augusto Silva on 13/10/23.
+//  Copyright (c) 2023 Stockbit - ARI MUNANDAR. All rights reserved.
 
 import UIKit
+import SnapKit
 import SDKCommon
 
-class HomeViewController: UIViewController {
+// MARK: - IHomeViewController
 
-    let budgetView = BudgetHomeView()
+protocol HomeViewControllerProtocol: AnyObject {
+    func displayScreenValues(_ values: HomeModel.ScreenValues)
+    func displayMonthPicker(_ showAt: Int)
+}
+
+// MARK: - HomeViewController
+
+class HomeViewController: UIViewController {
     
-    override var prefersStatusBarHidden: Bool {
-         return true
-     }
+    lazy var budgetView: BudgetHomeView = {
+       let budget = BudgetHomeView()
+        budget.delegate = self
+        return budget
+    }()
+    
+    lazy var pickerTextField: KeyboardPickerTextField = {
+        let pickerview = KeyboardPickerTextField()
+        pickerview.setPickerDelegate(self)
+        pickerview.isHidden = true
+        return pickerview
+    }()
+    
+    var interactor: HomeInteractorProtocol
+    var presenter: HomePresenterProtocol
+    var router: HomeRouterProtocol
+    
+    init(interactor: HomeInteractorProtocol = HomeInteractor(),
+         presenter: HomePresenterProtocol = HomePresenter(),
+         router: HomeRouterProtocol = HomeRouter()) {
+        self.interactor = interactor
+        self.presenter = presenter
+        self.router = router
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        return nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        interactor.loadScreenValues()
+        setupLayout()
+    }
+    
+    private func setup() {
+        interactor.presenter = presenter
+        presenter.controller = self
+        router.controller = self
+    }
+    
+    private func setupLayout() {
+        view.addSubview(budgetView)
+        view.addSubview(pickerTextField)
         
-        view.backgroundColor = .white
-        navigationItem.hidesBackButton = true
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        addbudgetViewToHome()
+        budgetView.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top)
+            make.left.equalTo(view.snp.left)
+            make.right.equalTo(view.snp.right)
+            make.height.equalTo(view.frame.height / 3)
+        }
     }
 }
 
-extension HomeViewController: BudgetHomeViewDelegate {
-    func tapAddExpense() {
-        let service = AuthService()
-        service.logout { _, error in
-            if error != nil {
-                return
-            }
-            
-            let destination = LoginViewController()
-            destination.navigationItem.hidesBackButton = true
-            destination.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-            self.navigationController?.pushViewController(destination, animated: true)
-        }
+// MARK: HomeViewControllerProtocol Implementation
+
+extension HomeViewController: HomeViewControllerProtocol, BudgetHomeViewDelegate, KeyboardPickerDelegate {
+    
+    func didSelectOption(_ option: String) {
+        interactor.displayDatafrom(month: Int(option))
     }
     
-    func addbudgetViewToHome() {
-        budgetView.delegate = self
+    func tapAddExpense() {
+        let option1 = UIAlertAction(title: "Gastos", style: .default) { _ in
+            print("Gastos")
+        }
         
-        view.addSubview(budgetView)
+        let option2 = UIAlertAction(title: "Renda", style: .default) { _ in
+            print("Renda")
+        }
         
-        NSLayoutConstraint.activate([
-            budgetView.topAnchor.constraint(equalTo: view.topAnchor),
-            budgetView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            budgetView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            budgetView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
-        ])
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            AuthService().logout { _, error in
+                if error != nil {
+                    return
+                }
+                
+                let destination = LoginViewController()
+                destination.navigationItem.hidesBackButton = true
+                destination.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+                self.navigationController?.pushViewController(destination, animated: true)
+            }
+        }
+        
+        CustomActionSheet.presentActionSheet(from: self, title: nil, message: nil, actions: [option1, option2, cancel])
+    }
+    
+    func tapSelectDate() {
+        interactor.selectDisplayedMonth()
+    }
+    
+    func displayScreenValues(_ values: HomeModel.ScreenValues) {
+        budgetView.data = values.income
+        pickerTextField.setPickerData(values.monthData)
+    }
+    
+    func displayMonthPicker(_ showAt: Int) {
+        let index = showAt - 1
+        pickerTextField.showPicker(at: index)
     }
 }

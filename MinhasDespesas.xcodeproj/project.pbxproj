@@ -55,6 +55,12 @@
 		C5BB40EC2AB3CBC400051633 /* LoginKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BB40EB2AB3CBC400051633 /* LoginKeys.swift */; };
 		C5BB40EE2AB3CCAA00051633 /* LoginKeysValues.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5BB40ED2AB3CCAA00051633 /* LoginKeysValues.strings */; };
 		C5BB40F02AB3D2EB00051633 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BB40EF2AB3D2EB00051633 /* WelcomeModel.swift */; };
+		C5CD58CE2AD984FA00D8DAD7 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD58C92AD984FA00D8DAD7 /* HomePresenter.swift */; };
+		C5CD58CF2AD984FA00D8DAD7 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD58CA2AD984FA00D8DAD7 /* HomeRouter.swift */; };
+		C5CD58D02AD984FA00D8DAD7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD58CB2AD984FA00D8DAD7 /* HomeViewController.swift */; };
+		C5CD58D12AD984FA00D8DAD7 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD58CC2AD984FA00D8DAD7 /* HomeInteractor.swift */; };
+		C5CD58D22AD984FA00D8DAD7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD58CD2AD984FA00D8DAD7 /* HomeModel.swift */; };
+		C5CD58D92AD9BBB000D8DAD7 /* HomeIncome+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD58D82AD9BBB000D8DAD7 /* HomeIncome+Extension.swift */; };
 		C5DC10E02AD61628000E1D50 /* CreatePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC10DB2AD61628000E1D50 /* CreatePasswordPresenter.swift */; };
 		C5DC10E12AD61628000E1D50 /* CreatePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC10DC2AD61628000E1D50 /* CreatePasswordRouter.swift */; };
 		C5DC10E22AD61628000E1D50 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC10DD2AD61628000E1D50 /* CreatePasswordViewController.swift */; };
@@ -66,7 +72,6 @@
 		C5EF08D32A636D7100E141AA /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08D22A636D7100E141AA /* LoggedInViewController.swift */; };
 		C5EF08D92A6373B500E141AA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08D82A6373B500E141AA /* LoginPresenter.swift */; };
 		C5EF08DB2A63749C00E141AA /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08DA2A63749C00E141AA /* LoginRouter.swift */; };
-		C5EF08DD2A63752000E141AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08DC2A63752000E141AA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +132,12 @@
 		C5BB40EB2AB3CBC400051633 /* LoginKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeys.swift; sourceTree = "<group>"; };
 		C5BB40ED2AB3CCAA00051633 /* LoginKeysValues.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = LoginKeysValues.strings; sourceTree = "<group>"; };
 		C5BB40EF2AB3D2EB00051633 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
+		C5CD58C92AD984FA00D8DAD7 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		C5CD58CA2AD984FA00D8DAD7 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		C5CD58CB2AD984FA00D8DAD7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C5CD58CC2AD984FA00D8DAD7 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		C5CD58CD2AD984FA00D8DAD7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		C5CD58D82AD9BBB000D8DAD7 /* HomeIncome+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeIncome+Extension.swift"; sourceTree = "<group>"; };
 		C5DC10DB2AD61628000E1D50 /* CreatePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordPresenter.swift; sourceTree = "<group>"; };
 		C5DC10DC2AD61628000E1D50 /* CreatePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordRouter.swift; sourceTree = "<group>"; };
 		C5DC10DD2AD61628000E1D50 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +149,6 @@
 		C5EF08D22A636D7100E141AA /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		C5EF08D82A6373B500E141AA /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C5EF08DA2A63749C00E141AA /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		C5EF08DC2A63752000E141AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +423,14 @@
 			path = AccountCreated;
 			sourceTree = "<group>";
 		};
+		C5CD58D72AD9BB9500D8DAD7 /* HomeExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD58D82AD9BBB000D8DAD7 /* HomeIncome+Extension.swift */,
+			);
+			path = HomeExtension;
+			sourceTree = "<group>";
+		};
 		C5DC10DA2AD615FF000E1D50 /* Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,7 +466,12 @@
 		C5EF08D72A6370B000E141AA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C5EF08DC2A63752000E141AA /* HomeViewController.swift */,
+				C5CD58D72AD9BB9500D8DAD7 /* HomeExtension */,
+				C5CD58C92AD984FA00D8DAD7 /* HomePresenter.swift */,
+				C5CD58CA2AD984FA00D8DAD7 /* HomeRouter.swift */,
+				C5CD58CB2AD984FA00D8DAD7 /* HomeViewController.swift */,
+				C5CD58CC2AD984FA00D8DAD7 /* HomeInteractor.swift */,
+				C5CD58CD2AD984FA00D8DAD7 /* HomeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -571,15 +594,16 @@
 				C520F9292A5CB27500C2338A /* LoginViewController.swift in Sources */,
 				C56BD8B52AD730F600FCDFEF /* AccountCreatedInteractor.swift in Sources */,
 				C537409E2A59B1D100DE8426 /* WelcomeViewController.swift in Sources */,
+				C5CD58D12AD984FA00D8DAD7 /* HomeInteractor.swift in Sources */,
 				C5EF08C62A63467500E141AA /* LoginInteractor.swift in Sources */,
 				C56BD8CE2AD76C3C00FCDFEF /* ForgotPasswordConfirmationModel.swift in Sources */,
 				C50FAA082ACCAB3A000F9083 /* UIButton+Extension.swift in Sources */,
 				C5BB40EC2AB3CBC400051633 /* LoginKeys.swift in Sources */,
 				C5EF08D92A6373B500E141AA /* LoginPresenter.swift in Sources */,
+				C5CD58D22AD984FA00D8DAD7 /* HomeModel.swift in Sources */,
 				C56BD8B22AD730F600FCDFEF /* AccountCreatedPresenter.swift in Sources */,
 				C5B1CF002ACC8BFA00E0DB7C /* FullNameRouter.swift in Sources */,
 				C5B1CF012ACC8BFA00E0DB7C /* FullNameViewController.swift in Sources */,
-				C5EF08DD2A63752000E141AA /* HomeViewController.swift in Sources */,
 				C52D37C22AC63EF900BA4B78 /* BudgetHomeView.swift in Sources */,
 				C5BB40DF2AB3C9C500051633 /* LoginModel.swift in Sources */,
 				C56BD8E52AD84F3200FCDFEF /* UIFont+Extension.swift in Sources */,
@@ -591,6 +615,7 @@
 				C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */,
 				C56BD8E12AD83DB300FCDFEF /* ModuleScreen.swift in Sources */,
 				C5DC10E02AD61628000E1D50 /* CreatePasswordPresenter.swift in Sources */,
+				C5CD58D92AD9BBB000D8DAD7 /* HomeIncome+Extension.swift in Sources */,
 				C520F92B2A5CB28800C2338A /* WelcomeRouter.swift in Sources */,
 				C5B1CF022ACC8BFA00E0DB7C /* FullNameInteractor.swift in Sources */,
 				C5DC10E22AD61628000E1D50 /* CreatePasswordViewController.swift in Sources */,
@@ -601,6 +626,8 @@
 				C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */,
 				C50FA9F92ACCA20C000F9083 /* OnboardingLayout.swift in Sources */,
 				C56BD8C12AD769AC00FCDFEF /* ForgotPasswordModel.swift in Sources */,
+				C5CD58CF2AD984FA00D8DAD7 /* HomeRouter.swift in Sources */,
+				C5CD58CE2AD984FA00D8DAD7 /* HomePresenter.swift in Sources */,
 				C50FAA042ACCAA44000F9083 /* EmailInteractor.swift in Sources */,
 				C53740802A59AD0100DE8426 /* AppDelegate.swift in Sources */,
 				C53740972A59AF6F00DE8426 /* SplashInteractor.swift in Sources */,
@@ -621,6 +648,7 @@
 				C56BD8CB2AD76C3C00FCDFEF /* ForgotPasswordConfirmationRouter.swift in Sources */,
 				C5B1CEFF2ACC8BFA00E0DB7C /* FullNamePresenter.swift in Sources */,
 				C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */,
+				C5CD58D02AD984FA00D8DAD7 /* HomeViewController.swift in Sources */,
 				C56BD8CD2AD76C3C00FCDFEF /* ForgotPasswordConfirmationInteractor.swift in Sources */,
 				C56BD8BE2AD769AC00FCDFEF /* ForgotPasswordRouter.swift in Sources */,
 				C50FAA012ACCAA44000F9083 /* EmailPresenter.swift in Sources */,

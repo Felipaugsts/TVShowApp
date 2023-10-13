@@ -30,7 +30,7 @@ public class SplashRouter: SplashRouterLogic {
     }
     
     public func routeHomeView() {
-        controller?.navigationController?.pushViewController(HomeViewController(), animated: true)
+        UIApplication.setRootViewControllerWithNavigation(HomeViewController())
     }
 }
 

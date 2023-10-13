@@ -24,7 +24,6 @@ public class LoginInteractor: LoginInteractorLogic {
     private var biometryService: BiometryWorkerLogic
     
     public var presenter: LoginPresenterLogic?
-    
     // MARK: -  Initializers
     
     public init(service: AuthServiceLogic = AuthService(),
@@ -42,9 +41,9 @@ public class LoginInteractor: LoginInteractorLogic {
                 self?.presenter?.presentWrongPassword()
                 return
             }
-            
             self?.biometryService.setBiometryEnabled(true)
             self?.biometryService.setBiometryData(email, password)
+            
             self?.presenter?.presentHomeScreen()
             
         }

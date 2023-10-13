@@ -34,12 +34,18 @@ public class SplashInteractorDefault: SplashInteractor {
     
     private func isUserSignedIn() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            if self.userRepository.user != nil && self.service.isUserAuthenticated() {
-                self.presenter?.presentHomeView()
+            guard let repositoryUID = self.userRepository.user?.userUID,
+                    self.service.isUserAuthenticated(),
+                  let currentUserUID = self.service.getCurrentUser()?.uid,
+                  repositoryUID == currentUserUID else {
+                self.service.logout { _, _ in
+                }
+                self.presenter?.presentLogin()
                 return
             }
-            
-            self.presenter?.presentLogin()
+            self.service.saveUserData { _ in
+                self.presenter?.presentHomeView()
+            }
         }
     }
 }

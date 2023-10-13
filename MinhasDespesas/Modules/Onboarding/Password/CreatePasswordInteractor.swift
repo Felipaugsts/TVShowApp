@@ -30,12 +30,15 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
     
     private var firstPassword = false
     private var service: AuthServiceLogic
+    private var networkService: ServiceProviderProtocol
     private var password: String = ""
     
     // MARK: - Initializer
     
-    init(service: AuthServiceLogic = AuthService()) {
+    init(service: AuthServiceLogic = AuthService(),
+         networkService: ServiceProviderProtocol = ServiceProvider.shared) {
         self.service = service
+        self.networkService = networkService
     }
     
     // MARK: - Public Methods
@@ -75,31 +78,92 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
 
     private func createAccount(email: String, password: String) {
         service.createAccount(email: email, password: password) { _, error in
-            if let error = error {
-                print(error)
+            if error != nil {
+                self.logout()
             } else {
-                self.updateUserProfile()
+                self.setInitialBudget()
+                self.setUser()
             }
+        }
+    }
+    
+    private func setUser() {
+        guard let userInfo = service.getCurrentUser(), let id = userInfo.uid else {
+            return
+        }
+
+        var user = CreatePasswordModel.User() // Initialize a User instance
+        user.name = name
+        user.email = userInfo.email
+        user.userUID = id
+
+        service.createFirestoreDocument(collectionName: "Users", documentID: id, data: user) { _ in
         }
     }
 
     
-    private func updateUserProfile() {
-        guard let name = name else {
-            logout()
-            presenter?.presentAccountCreated()
+    private func setInitialBudget() {
+        let months = getMonths()
+        let year = getDateComponentAsString(dateFormat: "yyyy")
+        let yearBudget = YearBudget(year: Int(year) ?? 0,
+                                    yearBudget: months)
+        guard let userID = service.getCurrentUser()?.uid else {
             return
         }
         
-        service.updateUsername(name) { _, error in
+        service.createFirestoreDocument(collectionName: "Budget", documentID: userID, data: yearBudget) { response in
             self.logout()
-            self.presenter?.presentAccountCreated()
         }
+    }
+    
+    private func getMonths() -> [MonthData] {
+        var yearBudget: [MonthData] = []
+        
+        for month in 1...12 { // Loop through 12 months
+            let monthString = String(format: "%02d", month) // Format month as "MM"
+            
+            // Create a MonthData instance for the current month
+            let monthData = MonthData(
+                month: monthString,
+                incoming: [
+                    IncomingData(
+                        totalIncoming: 0,
+                        people: [
+                            PersonData(personId: 0, name: "", value: 0)
+                        ]
+                    )
+                ],
+                expenses: [
+                    ExpenseData(
+                        totalExpenses: 0,
+                        creditCards: [],
+                        house: [],
+                        education: []
+                    )
+                ]
+            )
+            
+            yearBudget.append(monthData)
+        }
+        return yearBudget
     }
     
     private func logout() {
         service.logout { _, _ in
-            print("logged out")
+            self.presenter?.presentAccountCreated()
         }
+    }
+    
+    func getDateComponentAsString(date: Date? = nil, dateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        
+        if let date = date {
+            return dateFormatter.string(from: date)
+        }
+        
+        // If no date is provided, use the current date
+        let currentDate = Date()
+        return dateFormatter.string(from: currentDate)
     }
 }

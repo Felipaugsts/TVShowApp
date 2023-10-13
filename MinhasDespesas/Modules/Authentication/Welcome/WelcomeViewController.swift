@@ -22,9 +22,9 @@ public class WelcomeViewController: UIViewController {
     
     lazy var background: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "loginBG")
+        image.image = UIImage(named: "welcomebackground")
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         return image
     }()
     
@@ -40,13 +40,14 @@ public class WelcomeViewController: UIViewController {
     
     lazy var registerButton: UIButton = {
         let button = UIButton()
-        button.tintColor = .blue
-        button.backgroundColor = DSColor.medium
+        button.setTitleColor(DSColor.darkest, for: .normal) // Set text color to black
+        button.backgroundColor = DSColor.light
         button.layer.cornerRadius = 16
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(displayRegister), for: .touchUpInside)
         return button
     }()
+
     
     
     // MARK: - Variables
@@ -91,10 +92,9 @@ public class WelcomeViewController: UIViewController {
     
     private func setupLayout() {
         view.backgroundColor = .white
-        
+        view.addSubview(background)
         view.addSubview(registerButton)
         view.addSubview(signInButton)
-        view.addSubview(background)
         
         NSLayoutConstraint.activate([
             registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
@@ -107,10 +107,10 @@ public class WelcomeViewController: UIViewController {
             signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             signInButton.heightAnchor.constraint(equalToConstant: 55),
             
-            background.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            background.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -80),
-            background.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            background.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
+            background.topAnchor.constraint(equalTo: view.topAnchor),
+            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            background.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
