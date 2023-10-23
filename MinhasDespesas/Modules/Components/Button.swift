@@ -6,8 +6,43 @@
 //
 
 import UIKit
+import SDKCommon
 
-class Button: UIButton {
+class Button: UIButton, Themeable {
+    var theme: SDKCommon.PanTheme = .primary {
+        didSet {
+            setTheme()
+        }
+    }
+    
+    func setTheme(_ isPressed: Bool = false) {
+        switch theme {
+        case .primary:
+            backgroundColor = DSColor.primary
+            tintColor = DSColor.lightest
+        case .black:
+            backgroundColor = DSColor.secondaryDark
+            tintColor = DSColor.lightest
+        case .negative:
+            backgroundColor = DSColor.negative
+            tintColor = DSColor.lightest
+        case .green:
+            backgroundColor = DSColor.positive
+            tintColor = DSColor.lightest
+        case .white:
+            backgroundColor = DSColor.lightest
+            tintColor = DSColor.secondaryDark
+        case .secondary:
+            backgroundColor = DSColor.secondary
+            tintColor = DSColor.lightest
+        }
+    }
+    
+    public var rounded: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = rounded
+        }
+    }
     
     private var originalTitle: String?
     private var loadingIndicator: UIActivityIndicatorView!
@@ -24,6 +59,7 @@ class Button: UIButton {
     
     private func commonInit() {
         originalTitle = title(for: .normal)
+        theme = .primary
         
         titleLabel?.font = .circularBook(size: 16)
         loadingIndicator = UIActivityIndicatorView(style: .medium)

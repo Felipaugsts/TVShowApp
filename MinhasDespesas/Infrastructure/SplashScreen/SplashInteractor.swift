@@ -35,7 +35,6 @@ public class SplashInteractorDefault: SplashInteractor {
     private func isUserSignedIn() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             guard let repositoryUID = self.userRepository.user?.userUID,
-                    self.service.isUserAuthenticated(),
                   let currentUserUID = self.service.getCurrentUser()?.uid,
                   repositoryUID == currentUserUID else {
                 self.service.logout { _, _ in

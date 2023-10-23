@@ -14,4 +14,6 @@ target 'MinhasDespesas' do
   pod 'KeychainSwift', '20.0.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'SDKCommon', path: '../Common'
+  pod 'SDWebImage'
+
 end

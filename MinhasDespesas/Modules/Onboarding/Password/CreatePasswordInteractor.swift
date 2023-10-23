@@ -6,6 +6,7 @@
 
 import UIKit
 import SDKCommon
+import FirebaseFirestore
 
 // MARK: - CreatePasswordInteractor Protocol
 
@@ -81,7 +82,6 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
             if error != nil {
                 self.logout()
             } else {
-                self.setInitialBudget()
                 self.setUser()
             }
         }
@@ -96,62 +96,86 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
         user.name = name
         user.email = userInfo.email
         user.userUID = id
-
+        
         service.createFirestoreDocument(collectionName: "Users", documentID: id, data: user) { _ in
+            self.setInitialBudget()
         }
     }
 
     
     private func setInitialBudget() {
-        let months = getMonths()
-        let year = getDateComponentAsString(dateFormat: "yyyy")
-        let yearBudget = YearBudget(year: Int(year) ?? 0,
-                                    yearBudget: months)
+        let (month, year) = extractMonthAndYear() ?? ("", "")
         guard let userID = service.getCurrentUser()?.uid else {
             return
         }
+        guard let months = getMonths(month: month) else { return }
         
-        service.createFirestoreDocument(collectionName: "Budget", documentID: userID, data: yearBudget) { response in
-            self.logout()
+        let db = Firestore.firestore()
+        let userCollection = db.collection("Users").document(userID)
+        userCollection.collection(year).document(month).setData(months, merge: true) { error in
+            guard let error = error else {
+                self.presenter?.presentAccountCreated()
+                return
+            }
+            
+            print(error.localizedDescription)
         }
     }
     
-    private func getMonths() -> [MonthData] {
-        var yearBudget: [MonthData] = []
+    private func getMonths(month: String) -> [String: Any]? {
+        let data = MonthData(
+            month: month,
+            incoming: [
+                IncomingData(
+                    totalIncoming: 0,
+                    people: [
+                        PersonData(personId: 0, name: "", value: 0)
+                    ]
+                )
+            ],
+            expenses: [
+                ExpenseData(
+                    totalExpenses: 0,
+                    creditCards: [],
+                    house: [],
+                    education: []
+                )
+            ]
+        )
         
-        for month in 1...12 { // Loop through 12 months
-            let monthString = String(format: "%02d", month) // Format month as "MM"
-            
-            // Create a MonthData instance for the current month
-            let monthData = MonthData(
-                month: monthString,
-                incoming: [
-                    IncomingData(
-                        totalIncoming: 0,
-                        people: [
-                            PersonData(personId: 0, name: "", value: 0)
-                        ]
-                    )
-                ],
-                expenses: [
-                    ExpenseData(
-                        totalExpenses: 0,
-                        creditCards: [],
-                        house: [],
-                        education: []
-                    )
-                ]
-            )
-            
-            yearBudget.append(monthData)
+        do {
+            let jsonString = try data.toDictionary()
+            return jsonString
+        } catch {
+            return nil
         }
-        return yearBudget
     }
     
     private func logout() {
         service.logout { _, _ in
             self.presenter?.presentAccountCreated()
         }
+    }
+    
+    func extractMonthAndYear() -> (String, String)? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy" // Define the date format
+
+        // Format the current date as a string
+        let dateString = dateFormatter.string(from: Date())
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let calendar = Calendar.current
+            let monthNumber = calendar.component(.month, from: date)
+            let year = calendar.component(.year, from: date)
+            
+            let monthString = String(monthNumber)
+            let yearString = String(year)
+            
+            return (monthString, yearString)
+        }
+
+        return nil
     }
     
     func getDateComponentAsString(date: Date? = nil, dateFormat: String) -> String {
@@ -165,5 +189,19 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
         // If no date is provided, use the current date
         let currentDate = Date()
         return dateFormatter.string(from: currentDate)
+    }
+}
+
+extension Encodable {
+    func toDictionary() throws -> [String: Any] {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let data = try encoder.encode(self)
+        
+        if let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
+            return dictionary
+        } else {
+            throw EncodingError.invalidValue(self, EncodingError.Context(codingPath: [], debugDescription: "Failed to convert to dictionary"))
+        }
     }
 }

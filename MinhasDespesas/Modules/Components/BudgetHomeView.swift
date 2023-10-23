@@ -210,6 +210,7 @@ public struct BudgetMonthDate {
     public var totalIncome: String
     public var currentMonth: String
 }
+
 extension Array where Element == MonthData {
     func getCurrentMonthData(forMonth month: String) -> MonthData? {
         return first { $0.month == month }
