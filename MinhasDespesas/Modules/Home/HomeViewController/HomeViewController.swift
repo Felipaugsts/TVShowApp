@@ -79,7 +79,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var interactor: (HomeInteractorProtocol & MoviesDataStore)
     var presenter: HomePresenterProtocol
-    var router: (NSObjectProtocol & HomeRouterProtocol &HomeRouterDataPassing)
+    var router: (NSObjectProtocol & HomeRouterProtocol & HomeRouterDataPassing)
     
     private var popularMovies: [Movie] = []
     

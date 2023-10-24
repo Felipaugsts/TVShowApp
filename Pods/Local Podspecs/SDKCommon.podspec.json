@@ -18,24 +18,13 @@
     "ios": "13.0"
   },
   "source_files": "SDKCommon/Classes/**/*",
+  "vendored_frameworks": "Path/To/Firebase/ModuleMaps",
   "dependencies": {
     "SwinjectAutoregistration": [
 
     ],
     "Swinject": [
 
-    ],
-    "Firebase/Auth": [
-
-    ],
-    "Firebase/Firestore": [
-
-    ],
-    "Firebase/Core": [
-
-    ],
-    "FirebaseFirestoreSwift": [
-      "> 7.0-beta"
     ],
     "KeychainSwift": [
       "20.0.0"
@@ -47,6 +36,15 @@
 
     ],
     "SDWebImage": [
+
+    ],
+    "Firebase/Auth": [
+
+    ],
+    "Firebase/Firestore": [
+
+    ],
+    "Firebase/Core": [
 
     ]
   }
