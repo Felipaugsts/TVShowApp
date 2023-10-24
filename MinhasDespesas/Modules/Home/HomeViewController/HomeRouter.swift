@@ -12,6 +12,8 @@ import UIKit
 protocol HomeRouterProtocol: AnyObject {
     var controller: UIViewController? { get set }
     
+    func routeToMovieSelected()
+    
 }
 
 public protocol HomeRouterDataPassing: AnyObject {
@@ -27,31 +29,11 @@ class HomeRouter: NSObject, HomeRouterProtocol, HomeRouterDataPassing {
     var dataStore: MoviesDataStore?
     
     override init() { }
-
-}
-
-
-
-
-
-
-
-
-class CustomNavigationController: UINavigationController, UINavigationControllerDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Set this class as the navigation controller's delegate
-        self.delegate = self
+    
+    func routeToMovieSelected() {
+        print(dataStore?.movie)
+        let newViewController = MovieDetailsViewController()
+        controller?.navigationController?.pushViewController(newViewController, animated: true)
     }
 
-    // Function to set a new root view controller
-    func setRootViewController(_ viewController: UIViewController) {
-        // Pop to the root view controller, removing all previous view controllers
-        popToRootViewController(animated: false)
-        // Set the new root view controller
-        setViewControllers([viewController], animated: true)
-        self.navigationBar.barTintColor = .black
-        navigationBar.isTranslucent = false
-    }
 }

@@ -10,17 +10,20 @@ import SnapKit
 import SDKCommon
 import SDWebImage
 
-// MARK: - IHomeViewController
+// MARK: - Protocol
 
 protocol HomeViewControllerProtocol: AnyObject {
     func displayScreenValues(_ values: HomeModel.ScreenValues)
     func displayPopulars(movies: [Movie])
+    func displayMovieSelected()
 }
 
 // MARK: - HomeViewController
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController {
 
+    // MARK: - Components
+    
     lazy var safeArea = view.safeAreaLayoutGuide
     
     let background: UIImageView = {
@@ -77,11 +80,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return imageView
     }()
     
+    // MARK: - Arch Variables
+    
     var interactor: (HomeInteractorProtocol & MoviesDataStore)
     var presenter: HomePresenterProtocol
     var router: (NSObjectProtocol & HomeRouterProtocol & HomeRouterDataPassing)
     
     private var popularMovies: [Movie] = []
+    
+    // MARK: - Initializers
     
     init(interactor: (HomeInteractorProtocol & MoviesDataStore) = HomeInteractor(),
          presenter: HomePresenterProtocol = HomePresenter(),
@@ -106,11 +113,21 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor.loadScreenValues()
-        
+        setupLayout()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func setup() {
+        interactor.presenter = presenter
+        presenter.controller = self
+        router.controller = self
+        router.dataStore = interactor
+    }
+    
+    private func setupLayout() {
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
         searchButton.tintColor = .white
-
-        // Set the search button as the right bar button item
         navigationItem.rightBarButtonItem = searchButton
         
         view.addSubview(background)
@@ -153,20 +170,34 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @objc
     func searchTapped() {
-         // Handle the search button tap here
-         // You can navigate to a search screen or perform other actions
+        let newViewController = MovieDetailsViewController()
+        navigationController?.present(newViewController, animated: true)
      }
-    
-    private func setup() {
-        interactor.presenter = presenter
-        presenter.controller = self
-        router.controller = self
-    }
-    
-    private func getMovies() {
-        
-    }
+}
 
+// MARK: Protocol Implementation
+
+extension HomeViewController: HomeViewControllerProtocol {
+    func displayScreenValues(_ values: HomeModel.ScreenValues) {
+       
+    }
+    
+    func displayPopulars(movies: [Movie]) {
+        popularMovies = movies
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func displayMovieSelected() {
+        router.routeToMovieSelected()
+    }
+}
+
+// MARK: - Popular Movie
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return popularMovies.count
     }
@@ -194,26 +225,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else {
-            return
-        }
-        
-        let newViewController = MovieDetailsViewController()
-        self.navigationController?.pushViewController(newViewController, animated: true)
-    }
-}
-
-// MARK: HomeViewControllerProtocol Implementation
-
-extension HomeViewController: HomeViewControllerProtocol {
-    func displayScreenValues(_ values: HomeModel.ScreenValues) {
-       
-    }
-    
-    func displayPopulars(movies: [Movie]) {
-        popularMovies = movies
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+        let movieSelected = popularMovies[indexPath.row]
+        interactor.didSelectMovie(movieSelected)
     }
 }

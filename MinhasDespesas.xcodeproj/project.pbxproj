@@ -19,7 +19,6 @@
 		C50FAA0E2ACCDAEF000F9083 /* OnKeyboardChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FAA0D2ACCDAEF000F9083 /* OnKeyboardChange.swift */; };
 		C520F9292A5CB27500C2338A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520F9282A5CB27500C2338A /* LoginViewController.swift */; };
 		C520F92B2A5CB28800C2338A /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */; };
-		C52D37C22AC63EF900BA4B78 /* BudgetHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D37C12AC63EF900BA4B78 /* BudgetHomeView.swift */; };
 		C53740802A59AD0100DE8426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537407F2A59AD0100DE8426 /* AppDelegate.swift */; };
 		C53740822A59AD0100DE8426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740812A59AD0100DE8426 /* SceneDelegate.swift */; };
 		C53740892A59AD0300DE8426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53740882A59AD0300DE8426 /* Assets.xcassets */; };
@@ -27,6 +26,7 @@
 		C53740992A59AF8400DE8426 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53740982A59AF8400DE8426 /* SplashPresenter.swift */; };
 		C537409E2A59B1D100DE8426 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537409D2A59B1D100DE8426 /* WelcomeViewController.swift */; };
 		C53740A02A59B21A00DE8426 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C537409F2A59B21A00DE8426 /* SplashRouter.swift */; };
+		C551AFFB2AE815DE00A89697 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551AFFA2AE815DE00A89697 /* HomeWorker.swift */; };
 		C56BD8B22AD730F600FCDFEF /* AccountCreatedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8AD2AD730F600FCDFEF /* AccountCreatedPresenter.swift */; };
 		C56BD8B32AD730F600FCDFEF /* AccountCreatedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8AE2AD730F600FCDFEF /* AccountCreatedRouter.swift */; };
 		C56BD8B42AD730F600FCDFEF /* AccountCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BD8AF2AD730F600FCDFEF /* AccountCreatedViewController.swift */; };
@@ -96,7 +96,6 @@
 		C50FAA0D2ACCDAEF000F9083 /* OnKeyboardChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnKeyboardChange.swift; sourceTree = "<group>"; };
 		C520F9282A5CB27500C2338A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C520F92A2A5CB28800C2338A /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
-		C52D37C12AC63EF900BA4B78 /* BudgetHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetHomeView.swift; sourceTree = "<group>"; };
 		C537407C2A59AD0100DE8426 /* MinhasDespesas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhasDespesas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C537407F2A59AD0100DE8426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53740812A59AD0100DE8426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		C53740982A59AF8400DE8426 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		C537409D2A59B1D100DE8426 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C537409F2A59B21A00DE8426 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		C551AFFA2AE815DE00A89697 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		C56BD8AD2AD730F600FCDFEF /* AccountCreatedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedPresenter.swift; sourceTree = "<group>"; };
 		C56BD8AE2AD730F600FCDFEF /* AccountCreatedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedRouter.swift; sourceTree = "<group>"; };
 		C56BD8AF2AD730F600FCDFEF /* AccountCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedViewController.swift; sourceTree = "<group>"; };
@@ -280,12 +280,12 @@
 			isa = PBXGroup;
 			children = (
 				C502C6212AE171B100384142 /* Providers */,
-				C5CD58D72AD9BB9500D8DAD7 /* HomeExtension */,
 				C5CD58C92AD984FA00D8DAD7 /* HomePresenter.swift */,
 				C5CD58CA2AD984FA00D8DAD7 /* HomeRouter.swift */,
 				C5CD58CB2AD984FA00D8DAD7 /* HomeViewController.swift */,
 				C5CD58CC2AD984FA00D8DAD7 /* HomeInteractor.swift */,
 				C5CD58CD2AD984FA00D8DAD7 /* HomeModel.swift */,
+				C551AFFA2AE815DE00A89697 /* HomeWorker.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -467,13 +467,6 @@
 			path = AccountCreated;
 			sourceTree = "<group>";
 		};
-		C5CD58D72AD9BB9500D8DAD7 /* HomeExtension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HomeExtension;
-			sourceTree = "<group>";
-		};
 		C5DC10DA2AD615FF000E1D50 /* Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,7 +486,6 @@
 				C56BD8D32AD773AA00FCDFEF /* CircularXX-Book.otf */,
 				C56BD8D42AD773AB00FCDFEF /* MaterialIcons-Regular.ttf */,
 				C5EF08CF2A63544900E141AA /* Button.swift */,
-				C52D37C12AC63EF900BA4B78 /* BudgetHomeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -644,7 +636,6 @@
 				C56BD8B22AD730F600FCDFEF /* AccountCreatedPresenter.swift in Sources */,
 				C5B1CF002ACC8BFA00E0DB7C /* FullNameRouter.swift in Sources */,
 				C5B1CF012ACC8BFA00E0DB7C /* FullNameViewController.swift in Sources */,
-				C52D37C22AC63EF900BA4B78 /* BudgetHomeView.swift in Sources */,
 				C5BB40DF2AB3C9C500051633 /* LoginModel.swift in Sources */,
 				C56BD8E52AD84F3200FCDFEF /* UIFont+Extension.swift in Sources */,
 				C5EF08D02A63544900E141AA /* Button.swift in Sources */,
@@ -696,6 +687,7 @@
 				C56BD8CD2AD76C3C00FCDFEF /* ForgotPasswordConfirmationInteractor.swift in Sources */,
 				C56BD8BE2AD769AC00FCDFEF /* ForgotPasswordRouter.swift in Sources */,
 				C50FAA012ACCAA44000F9083 /* EmailPresenter.swift in Sources */,
+				C551AFFB2AE815DE00A89697 /* HomeWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

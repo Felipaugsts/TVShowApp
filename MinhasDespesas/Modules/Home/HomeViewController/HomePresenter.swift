@@ -14,6 +14,7 @@ protocol HomePresenterProtocol: AnyObject {
     
     func presentScreenValues()
     func presentPopulars(movies: [Movie])
+    func presentMovieSelected()
 }
 
 // MARK: - HomePresenter Implementation
@@ -33,5 +34,9 @@ class HomePresenter: HomePresenterProtocol {
     
     func presentPopulars(movies: [Movie]) {
         controller?.displayPopulars(movies: movies)
+    }
+    
+    func presentMovieSelected() {
+        controller?.displayMovieSelected()
     }
 }
