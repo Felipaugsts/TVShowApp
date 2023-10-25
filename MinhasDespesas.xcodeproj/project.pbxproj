@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A4148B097BE9685628A3C4D /* Pods_MinhasDespesas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1892D667DB3F67EE3EE690B5 /* Pods_MinhasDespesas.framework */; };
 		C502C6242AE171D900384142 /* PopularMoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C502C6232AE171D900384142 /* PopularMoviesProvider.swift */; };
 		C50FA9F92ACCA20C000F9083 /* OnboardingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FA9F82ACCA20C000F9083 /* OnboardingLayout.swift */; };
 		C50FAA012ACCAA44000F9083 /* EmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50FA9FC2ACCAA44000F9083 /* EmailPresenter.swift */; };
@@ -47,6 +46,7 @@
 		C59285302A59B53700A35072 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592852F2A59B53700A35072 /* SplashViewController.swift */; };
 		C598D60D2A59BCDE00D7DEA1 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */; };
 		C598D60F2A59BD1000D7DEA1 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */; };
+		C59906192AE95E1C001E4578 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59906182AE95E1C001E4578 /* FirestoreService.swift */; };
 		C5B1CEFF2ACC8BFA00E0DB7C /* FullNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1CEFA2ACC8BFA00E0DB7C /* FullNamePresenter.swift */; };
 		C5B1CF002ACC8BFA00E0DB7C /* FullNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1CEFB2ACC8BFA00E0DB7C /* FullNameRouter.swift */; };
 		C5B1CF012ACC8BFA00E0DB7C /* FullNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1CEFC2ACC8BFA00E0DB7C /* FullNameViewController.swift */; };
@@ -77,14 +77,11 @@
 		C5EF08D32A636D7100E141AA /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08D22A636D7100E141AA /* LoggedInViewController.swift */; };
 		C5EF08D92A6373B500E141AA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08D82A6373B500E141AA /* LoginPresenter.swift */; };
 		C5EF08DB2A63749C00E141AA /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF08DA2A63749C00E141AA /* LoginRouter.swift */; };
+		CCB86741D38EED4FC5BA9989 /* Pods_MinhasDespesas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED29FF8949A8E3B2D5AC0615 /* Pods_MinhasDespesas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1892D667DB3F67EE3EE690B5 /* Pods_MinhasDespesas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinhasDespesas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.debug.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.debug.xcconfig"; sourceTree = "<group>"; };
-		243AE985F2CFAFC8BCEB54D9 /* Pods-MinhasDespesas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhasDespesas.debug.xcconfig"; path = "Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas.debug.xcconfig"; sourceTree = "<group>"; };
-		62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportimeApp.release.xcconfig"; path = "Target Support Files/Pods-SportimeApp/Pods-SportimeApp.release.xcconfig"; sourceTree = "<group>"; };
-		8ECF219DA582EA6B1DD8067B /* Pods-MinhasDespesas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhasDespesas.release.xcconfig"; path = "Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas.release.xcconfig"; sourceTree = "<group>"; };
+		A6AF5FD3A0CA67C09DDA42C1 /* Pods-MinhasDespesas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhasDespesas.release.xcconfig"; path = "Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas.release.xcconfig"; sourceTree = "<group>"; };
 		C502C6232AE171D900384142 /* PopularMoviesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesProvider.swift; sourceTree = "<group>"; };
 		C50FA9F82ACCA20C000F9083 /* OnboardingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLayout.swift; sourceTree = "<group>"; };
 		C50FA9FC2ACCAA44000F9083 /* EmailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPresenter.swift; sourceTree = "<group>"; };
@@ -129,6 +126,7 @@
 		C592852F2A59B53700A35072 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C598D60C2A59BCDE00D7DEA1 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		C598D60E2A59BD1000D7DEA1 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		C59906182AE95E1C001E4578 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		C5B1CEFA2ACC8BFA00E0DB7C /* FullNamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNamePresenter.swift; sourceTree = "<group>"; };
 		C5B1CEFB2ACC8BFA00E0DB7C /* FullNameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameRouter.swift; sourceTree = "<group>"; };
 		C5B1CEFC2ACC8BFA00E0DB7C /* FullNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +157,8 @@
 		C5EF08D22A636D7100E141AA /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		C5EF08D82A6373B500E141AA /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		C5EF08DA2A63749C00E141AA /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		DCBB5B250DFAAD6F5F107DEB /* Pods-MinhasDespesas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhasDespesas.debug.xcconfig"; path = "Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas.debug.xcconfig"; sourceTree = "<group>"; };
+		ED29FF8949A8E3B2D5AC0615 /* Pods_MinhasDespesas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinhasDespesas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,17 +166,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A4148B097BE9685628A3C4D /* Pods_MinhasDespesas.framework in Frameworks */,
+				CCB86741D38EED4FC5BA9989 /* Pods_MinhasDespesas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F0112F97CA25DE0808E2A8B /* Frameworks */ = {
+		7455191E48FA9364F167B2D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1892D667DB3F67EE3EE690B5 /* Pods_MinhasDespesas.framework */,
+				ED29FF8949A8E3B2D5AC0615 /* Pods_MinhasDespesas.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,10 +184,8 @@
 		BCC32C615D564C606595CD28 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1BEFE5F7F909283AD2E946DA /* Pods-SportimeApp.debug.xcconfig */,
-				62DECE4FABF443F48E9CE8DE /* Pods-SportimeApp.release.xcconfig */,
-				243AE985F2CFAFC8BCEB54D9 /* Pods-MinhasDespesas.debug.xcconfig */,
-				8ECF219DA582EA6B1DD8067B /* Pods-MinhasDespesas.release.xcconfig */,
+				DCBB5B250DFAAD6F5F107DEB /* Pods-MinhasDespesas.debug.xcconfig */,
+				A6AF5FD3A0CA67C09DDA42C1 /* Pods-MinhasDespesas.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -214,6 +212,7 @@
 		C50FA9F62ACCA1F1000F9083 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C59906172AE95E08001E4578 /* Firestore */,
 				C50FAA062ACCAAF7000F9083 /* Extension */,
 				C50FA9F72ACCA1F6000F9083 /* Screen */,
 			);
@@ -296,7 +295,7 @@
 				C537407E2A59AD0100DE8426 /* MinhasDespesas */,
 				C537407D2A59AD0100DE8426 /* Products */,
 				BCC32C615D564C606595CD28 /* Pods */,
-				0F0112F97CA25DE0808E2A8B /* Frameworks */,
+				7455191E48FA9364F167B2D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -407,6 +406,14 @@
 			path = ForgotPasswordConfirmation;
 			sourceTree = "<group>";
 		};
+		C59906172AE95E08001E4578 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				C59906182AE95E1C001E4578 /* FirestoreService.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
 		C5BB40E02AB3CA1400051633 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,11 +521,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C53740902A59AD0300DE8426 /* Build configuration list for PBXNativeTarget "MinhasDespesas" */;
 			buildPhases = (
-				F46F38BCA4062A0D2A3E96FA /* [CP] Check Pods Manifest.lock */,
+				DDCC9A7A0F0E52105FA041E6 /* [CP] Check Pods Manifest.lock */,
 				C53740782A59AD0100DE8426 /* Sources */,
 				C53740792A59AD0100DE8426 /* Frameworks */,
 				C537407A2A59AD0100DE8426 /* Resources */,
-				CB9FCB6575FBF512F207FB1A /* [CP] Embed Pods Frameworks */,
+				0780E9648D2369D51AD718A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -576,7 +583,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CB9FCB6575FBF512F207FB1A /* [CP] Embed Pods Frameworks */ = {
+		0780E9648D2369D51AD718A6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -593,7 +600,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MinhasDespesas/Pods-MinhasDespesas-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F46F38BCA4062A0D2A3E96FA /* [CP] Check Pods Manifest.lock */ = {
+		DDCC9A7A0F0E52105FA041E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -651,6 +658,7 @@
 				C5B1CF022ACC8BFA00E0DB7C /* FullNameInteractor.swift in Sources */,
 				C5DC10E22AD61628000E1D50 /* CreatePasswordViewController.swift in Sources */,
 				C5EF08D32A636D7100E141AA /* LoggedInViewController.swift in Sources */,
+				C59906192AE95E1C001E4578 /* FirestoreService.swift in Sources */,
 				C56BD8BD2AD769AC00FCDFEF /* ForgotPasswordPresenter.swift in Sources */,
 				C56BD8B42AD730F600FCDFEF /* AccountCreatedViewController.swift in Sources */,
 				C56BD8CC2AD76C3C00FCDFEF /* ForgotPasswordConfirmationViewController.swift in Sources */,
@@ -810,7 +818,7 @@
 		};
 		C53740912A59AD0300DE8426 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 243AE985F2CFAFC8BCEB54D9 /* Pods-MinhasDespesas.debug.xcconfig */;
+			baseConfigurationReference = DCBB5B250DFAAD6F5F107DEB /* Pods-MinhasDespesas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -842,7 +850,7 @@
 		};
 		C53740922A59AD0300DE8426 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ECF219DA582EA6B1DD8067B /* Pods-MinhasDespesas.release.xcconfig */;
+			baseConfigurationReference = A6AF5FD3A0CA67C09DDA42C1 /* Pods-MinhasDespesas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

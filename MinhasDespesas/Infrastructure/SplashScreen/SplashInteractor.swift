@@ -7,6 +7,7 @@
 
 import Foundation
 import SDKCommon
+import FirebaseFirestore
 
 public protocol SplashInteractor {
     var presenter: SplashPresenter? { get set }
@@ -18,12 +19,16 @@ public class SplashInteractorDefault: SplashInteractor {
     
     public var presenter: SplashPresenter?
     public var userRepository: UserDataSource
-    public var service: AuthServiceLogic
+    
+    private var service: AuthServiceLogic
+    private var firestoreService: FirestoreServiceLogic
     
     public init (userRepository: UserDataSource = UserRepository.shared,
-                 service: AuthServiceLogic = AuthService()) {
+                 service: AuthServiceLogic = AuthService(),
+                 firestoreService: FirestoreServiceLogic = FirestoreService.shared) {
         self.userRepository = userRepository
         self.service = service
+        self.firestoreService = firestoreService
     }
     
     public func loadScreenValues() {
@@ -42,9 +47,10 @@ public class SplashInteractorDefault: SplashInteractor {
                 self.presenter?.presentLogin()
                 return
             }
-            self.service.saveUserData { _ in
+            self.firestoreService.saveUserData { _ in
                 self.presenter?.presentHomeView()
             }
         }
     }
+        
 }

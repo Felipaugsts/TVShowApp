@@ -15,10 +15,12 @@ protocol MovieDetailsRouterProtocol: AnyObject {
 
 // MARK: - MovieDetailsRouter Implementation
 
-class MovieDetailsRouter: MovieDetailsRouterProtocol {
+class MovieDetailsRouter: NSObject, MovieDetailsRouterProtocol, HomeRouterDataPassing {
+    
+    var dataStore: MoviesDataStore?
     weak var controller: UIViewController?
 
     // MARK: - Initializer
     
-    init() { }
+    override init() { }
 }

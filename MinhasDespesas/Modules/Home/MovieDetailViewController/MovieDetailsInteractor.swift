@@ -17,9 +17,11 @@ protocol MovieDetailsInteractorProtocol: AnyObject {
 
 // MARK: - MovieDetailsInteractor Implementation
 
-class MovieDetailsInteractor: MovieDetailsInteractorProtocol {
+
+class MovieDetailsInteractor: MovieDetailsInteractorProtocol, MoviesDataStore {
     weak var presenter: MovieDetailsPresenterProtocol?
 
+    var movie: Movie?
     // MARK: - Initializer
     
     init() { }
@@ -27,6 +29,7 @@ class MovieDetailsInteractor: MovieDetailsInteractorProtocol {
     // MARK: - Public Methods
     
     func loadScreenValues() {
-        presenter?.presentScreenValues()
+        guard let movie = movie else { return }
+        presenter?.presentScreenValues(movie: movie)
     }
 }

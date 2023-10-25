@@ -54,6 +54,14 @@ public class SplashViewController: UIViewController, SplashViewControllerProtoco
         setupLottie()
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     private func setup() {
         interactor.presenter = presenter
         presenter.controller = self

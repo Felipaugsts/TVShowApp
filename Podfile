@@ -10,5 +10,5 @@ target 'MinhasDespesas' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'SDKCommon', path: '../Common'
   pod 'SDWebImage'
-
+  pod 'Firebase/Firestore'
 end

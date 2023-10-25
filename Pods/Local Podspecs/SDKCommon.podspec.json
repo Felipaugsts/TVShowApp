@@ -41,9 +41,6 @@
     "Firebase/Auth": [
 
     ],
-    "Firebase/Firestore": [
-
-    ],
     "Firebase/Core": [
 
     ]

@@ -6,7 +6,7 @@
 
 import UIKit
 import SDKCommon
-import FirebaseFirestore
+
 
 // MARK: - CreatePasswordInteractor Protocol
 
@@ -97,29 +97,29 @@ class CreatePasswordInteractor: CreatePasswordInteractorProtocol, CreatePassword
         user.email = userInfo.email
         user.userUID = id
         
-        service.createFirestoreDocument(collectionName: "Users", documentID: id, data: user) { _ in
-            self.setInitialBudget()
-        }
+//        service.createFirestoreDocument(collectionName: "Users", documentID: id, data: user) { _ in
+//            self.setInitialBudget()
+//        }
     }
 
     
     private func setInitialBudget() {
-        let (month, year) = extractMonthAndYear() ?? ("", "")
-        guard let userID = service.getCurrentUser()?.uid else {
-            return
-        }
-        guard let months = getMonths(month: month) else { return }
-        
-        let db = Firestore.firestore()
-        let userCollection = db.collection("Users").document(userID)
-        userCollection.collection(year).document(month).setData(months, merge: true) { error in
-            guard let error = error else {
-                self.presenter?.presentAccountCreated()
-                return
-            }
-            
-            print(error.localizedDescription)
-        }
+//        let (month, year) = extractMonthAndYear() ?? ("", "")
+//        guard let userID = service.getCurrentUser()?.uid else {
+//            return
+//        }
+//        guard let months = getMonths(month: month) else { return }
+//
+//        let db = Firestore.firestore()
+//        let userCollection = db.collection("Users").document(userID)
+//        userCollection.collection(year).document(month).setData(months, merge: true) { error in
+//            guard let error = error else {
+//                self.presenter?.presentAccountCreated()
+//                return
+//            }
+//
+//            print(error.localizedDescription)
+//        }
     }
     
     private func getMonths(month: String) -> [String: Any]? {

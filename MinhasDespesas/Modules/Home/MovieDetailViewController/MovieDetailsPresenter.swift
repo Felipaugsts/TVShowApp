@@ -12,7 +12,7 @@ import UIKit
 protocol MovieDetailsPresenterProtocol: AnyObject {
     var controller: MovieDetailsViewControllerProtocol? { get set }
     
-    func presentScreenValues()
+    func presentScreenValues(movie: Movie)
 }
 
 // MARK: - MovieDetailsPresenter Implementation
@@ -26,8 +26,8 @@ class MovieDetailsPresenter: MovieDetailsPresenterProtocol {
     
     // MARK: - Public Methods
     
-    func presentScreenValues() {
-        let values = MovieDetailsModel.ScreenValues(example: "example")
+    func presentScreenValues(movie: Movie) {
+        let values = MovieDetailsModel.ScreenValues(movie: movie)
         controller?.displayScreenValues(values)
     }
 }

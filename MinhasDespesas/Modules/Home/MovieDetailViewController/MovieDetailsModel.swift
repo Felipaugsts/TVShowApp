@@ -11,6 +11,6 @@ import UIKit
 
 enum MovieDetailsModel {
 	struct ScreenValues {
-        var example: String?
+        var movie: Movie?
 	}
 }

@@ -31,9 +31,13 @@ class HomeRouter: NSObject, HomeRouterProtocol, HomeRouterDataPassing {
     override init() { }
     
     func routeToMovieSelected() {
-        print(dataStore?.movie)
         let newViewController = MovieDetailsViewController()
+        var destination = newViewController.router.dataStore
+        passDatatoMovieSelected(datastore: dataStore, destinationDataStore: &destination)
         controller?.navigationController?.pushViewController(newViewController, animated: true)
     }
 
+    func passDatatoMovieSelected(datastore: MoviesDataStore?, destinationDataStore: inout MoviesDataStore?) {
+        destinationDataStore?.movie = datastore?.movie
+    }
 }

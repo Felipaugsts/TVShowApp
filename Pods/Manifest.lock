@@ -809,7 +809,6 @@ PODS:
   - SDKCommon (0.0.7):
     - Firebase/Auth
     - Firebase/Core
-    - Firebase/Firestore
     - KeychainSwift (= 20.0.0)
     - lottie-ios
     - SDWebImage
@@ -825,6 +824,7 @@ PODS:
     - Swinject (~> 2.8.3)
 
 DEPENDENCIES:
+  - Firebase/Firestore
   - KeychainSwift (= 20.0.0)
   - SDKCommon (from `../Common`)
   - SDWebImage
@@ -884,12 +884,12 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
-  SDKCommon: 4a4152baf337b964022fdf910cc8af841aafd95d
+  SDKCommon: 1e53bdb688a1392f567a72c954b4ad890eb08d5d
   SDWebImage: 96e0c18ef14010b7485210e92fac888587ebb958
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
   SwinjectAutoregistration: e3ee378dc458acf78d176fc7fec3902603452667
 
-PODFILE CHECKSUM: aca8b50e14e8c94a2eec7ae9b1b6ccbebf1708a1
+PODFILE CHECKSUM: e27cbd98061e70d1fa81bda8038ec5883db68ca5
 
 COCOAPODS: 1.11.3
